@@ -42,7 +42,7 @@ bot.on('message', async message => {
     //General Commands
     if (message.content.startsWith("!mistletoe")) {
         message.delete(1000);
-        message.channel.send("↑ \n| \nThe person above me and the person below me now have to kiss! \n| \n↓");
+        message.channel.send("↑ \n| \n :tanabata_tree: The person above me and the person below me now have to kiss! \n| \n↓");
     }
 
     if (message.content.startsWith("!hohoho")) {
@@ -50,7 +50,7 @@ bot.on('message', async message => {
     }
 
     if (message.content.startsWith("!naughty")) {
-        message.channel.send(vartom + " and " + varnom + " were doing something **naughty** under the christmas tree.");
+        message.channel.send(vartom + " and " + varnom + " were doing something **naughty** under the christmas tree. :rose: ");
     }
 
     //Mentions
