@@ -11,6 +11,7 @@ bot.on('message', async message => {
     const varnom = message.guild.members.random();
 
     if (message.content.startsWith("!mistletoe")) {
+        message.delete(1000);
         message.channel.send("↑ \n| \nThe person above me and the person below me now have to kiss! \n| \n↓");
     }
 
