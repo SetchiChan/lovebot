@@ -41,8 +41,7 @@ bot.on('message', async message => {
 
     //General Commands
     if (message.content.startsWith("!mistletoe")) {
-        message.delete(1000);
-        message.channel.send("↑ \n| \n :tanabata_tree: The person above me and the person below me now have to kiss! \n| \n↓");
+        message.reply(" and the person below them now have to kiss! :tanabata_tree: \n| \n↓");
     }
 
     if (message.content.startsWith("!hohoho")) {
