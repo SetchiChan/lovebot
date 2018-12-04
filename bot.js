@@ -16,7 +16,7 @@ bot.on('message', async message => {
     }
 
     if (message.content.startsWith("!ethan")) {
-        message.channel.send("All Ethan wants for christmas is... <@196593261828243456>.");
+        message.channel.send("All Ethan wants for christmas is... to rig this stupid bot.");
     }
 
     if (message.content.startsWith("!emily")) {
