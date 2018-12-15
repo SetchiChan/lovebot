@@ -13,7 +13,7 @@ bot.on('message', async message => {
     //Names
     if (message.content.startsWith("!test")) {
         message.channel.send("All this bot wants for christmas wants for christmas is... " + vartom + ".");
-        if(vartom == "@F L U F F Y B e a n#8888") {
+        if(vartom == "@285222710332620802") {
             message.channel.send("stasd");
         }
     }
