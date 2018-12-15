@@ -11,16 +11,18 @@ bot.on('message', async message => {
     const varnom = message.guild.members.random();
 
     //Names
+    if (message.content.startsWith("!test")) {
+        message.channel.send("All this bot wants for christmas wants for christmas is... " + vartom + ".");
+        if(vartom == "<@196593261828243456>") {
+            message.channel.send("stasd");
+        }
+    }
     if (message.content.startsWith("!mercedes")) {
         message.channel.send("All Mercedes wants for christmas is... " + vartom + ".");
     }
-    
-    if (message.content.startsWith("!dylan")) {
-        message.channel.send("All Dylan wants for christmas is <@285222710332620802>.");
-    }
 
     if (message.content.startsWith("!ethan")) {
-        message.channel.send("All Ethan wants for christmas is... to rig this stupid bot.");
+        message.channel.send("All Ethan wants for christmas is... <@196593261828243456>.");
     }
 
     if (message.content.startsWith("!emily")) {
