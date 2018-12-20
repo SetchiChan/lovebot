@@ -9,14 +9,13 @@ const TOKEN = "x";
 bot.on('message', async message => {
     const vartom = message.guild.members.random();
     const varnom = message.guild.members.random();
+    const varhom = message.guild.members.random();
 
     //Names
-    if (message.content.startsWith("!test")) {
-        message.channel.send("All this bot wants for christmas wants for christmas is... " + vartom + ".");
-        if(vartom == "@285222710332620802") {
-            message.channel.send("stasd");
-        }
+    if (message.content.startsWith("!threetoe")) {
+        message.channel.send(vartom + " and " + varnom + " kissed " + varhom + " under the mistletoe.");
     }
+    
     if (message.content.startsWith("!mercedes")) {
         message.channel.send("All Mercedes wants for christmas is... " + vartom + ".");
     }
