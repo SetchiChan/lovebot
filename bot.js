@@ -74,13 +74,13 @@ bot.on('message', async message => {
         message.channel.send("<@297867268161798144> is loli gagging.");
     }
     
-    if (message.content.startsWith("gasdadasd")) {
+    if (message.content.startsWith("sdsdsd")) {
        message.channel.send({embed: {
             title: "A wild pokémon has appeared!",
             description: "Guess the pokémon and type p!catch <pokémon> to catch it!",
             color: 44678,
             image: {
-                 "url": "https://vignette.wikia.nocookie.net/pokemon/images/f/fc/493Arceus.png/revision/latest?cb=20140329043000"
+                 "url": "https://i.imgur.com/GBJULXx.png"
                },
             fields: []
             }
@@ -90,7 +90,7 @@ bot.on('message', async message => {
 });     
 
 bot.on('ready', () => {
-    bot.user.setGame('Pokémon on 404720 servers!')
+    bot.user.setGame('Evolving')
 })
 
 
