@@ -73,11 +73,24 @@ bot.on('message', async message => {
     if (message.content.startsWith("death")) {
         message.channel.send("<@297867268161798144> is loli gagging.");
     }
+    
+    if (message.content.startsWith("god")) {
+       message.channel.send({embed: {
+            title: "A wild pokémon has appeared!",
+            description: "Guess the pokémon and type p!catch <pokémon> to catch it!",
+            color: 44678,
+            image: {
+                 "url": "https://vignette.wikia.nocookie.net/pokemon/images/f/fc/493Arceus.png/revision/latest?cb=20140329043000"
+               },
+            fields: []
+            }
+       })
+    }
 
 });     
 
 bot.on('ready', () => {
-    bot.user.setGame('finding love')
+    bot.user.setGame('Pokémon on 404720 servers!')
 })
 
 
