@@ -74,7 +74,7 @@ bot.on('message', async message => {
         message.channel.send("<@297867268161798144> is loli gagging.");
     }
     
-    if (message.content.startsWith("god")) {
+    if (message.content.startsWith("gasdadasd")) {
        message.channel.send({embed: {
             title: "A wild pokémon has appeared!",
             description: "Guess the pokémon and type p!catch <pokémon> to catch it!",
