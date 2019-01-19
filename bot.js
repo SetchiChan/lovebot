@@ -82,17 +82,21 @@ bot.on('message', async message => {
         message.channel.send("ONI-CHAN!~");
     }
     
-    if (message.content.startsWith("uhhhh")) {
+    if (message.content.startsWith("yes")) {
        message.channel.send({embed: {
             title: "A wild pokémon has appeared!",
             description: "Guess the pokémon and type p!catch <pokémon> to catch it!",
             color: 44678,
             image: {
-                 "url": "https://vignette.wikia.nocookie.net/pokemon/images/e/e2/133Eevee.png/revision/latest?cb=20140131035556&path-prefix=answers"
+                 "url": "https://pics.me.me/lewded-pikachu-37517665.png"
                },
             fields: []
             }
        })
+    }
+    
+    if (message.content.startsWith("p!catch lewd pikachu")) {
+        message.channel.send("Congratulations <@416429218960769026> You caught a level 69 lewd Pikachu!");
     }
 
 });     
