@@ -67,37 +67,6 @@ bot.on('message', async message => {
     var delayInMillisecondssss = 8000; //1 second
     var okdoki = Math.random()
 
-    setTimeout(function stopit() {
-    //your code to be executed after 1 second
-        message.channel.send(vartom + " loves you not.");
-    }, delayInMilliseconds);
-
-    setTimeout(function stopitt() {
-        //your code to be executed after 1 second
-            message.channel.send(vartom + " loves you.");
-        }, delayInMillisecondss);
-
-    setTimeout(function stopittt() {
-    //your code to be executed after 1 second
-        message.channel.send(vartom + " loves you not.");
-    }, delayInMillisecondsss);
-
-    setTimeout(function stopitttt() {
-        //your code to be executed after 1 second
-            if(okdoki === 0) {
-                message.channel.send(vartom + " loves you.");
-            } else {
-                message.channel.send(vartom + " loves you not.");
-            }
-        }, delayInMillisecondssss);
-
-    if (message.content.startsWith("!flowers")) {
-        message.channel.send(vartom + " loves you.");
-        stopit();
-        stopitt();
-        stopittt();
-        stopitttt();
-    }
 
     //Mentions
     if (message.content.startsWith("mercedes")) {
