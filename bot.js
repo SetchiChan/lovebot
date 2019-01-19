@@ -61,13 +61,6 @@ bot.on('message', async message => {
         message.channel.send("Don't worry... " + vartom + " is thinking about you.");
     }
 
-    var delayInMilliseconds = 2000; //1 second
-    var delayInMillisecondss = 4000; //1 second
-    var delayInMillisecondsss = 6000; //1 second
-    var delayInMillisecondssss = 8000; //1 second
-    var okdoki = Math.random()
-
-
     //Mentions
     if (message.content.startsWith("mercedes")) {
         message.channel.send("<@196593261828243456> got annoyed you pinged her.");
