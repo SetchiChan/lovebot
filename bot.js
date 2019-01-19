@@ -82,13 +82,13 @@ bot.on('message', async message => {
         message.channel.send("ONI-CHAN!~");
     }
     
-    if (message.content.startsWith("sdsdsd")) {
+    if (message.content.startsWith("uhhhh")) {
        message.channel.send({embed: {
             title: "A wild pokémon has appeared!",
             description: "Guess the pokémon and type p!catch <pokémon> to catch it!",
             color: 44678,
             image: {
-                 "url": "https://i.imgur.com/GBJULXx.png"
+                 "url": "https://vignette.wikia.nocookie.net/pokemon/images/e/e2/133Eevee.png/revision/latest?cb=20140131035556&path-prefix=answers"
                },
             fields: []
             }
