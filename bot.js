@@ -82,7 +82,7 @@ bot.on('message', async message => {
         message.channel.send("ONI-CHAN!~");
     }
     
-    if (message.content.startsWith("yes")) {
+    if (message.content.startsWith("asdasdasdasd")) {
        message.channel.send({embed: {
             title: "A wild pokémon has appeared!",
             description: "Guess the pokémon and type p!catch <pokémon> to catch it!",
