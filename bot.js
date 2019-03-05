@@ -86,10 +86,6 @@ bot.on('message', async message => {
         message.channel.send("Bunny-Sama~ give me your big juicy egg-sama~");
     }
     
-    if (message.content.startsWith("simon")) {
-        message.channel.send("simon is gay.");
-    }
-    
     if (message.content.startsWith("asdasdasdasd")) {
        message.channel.send({embed: {
             title: "A wild pokémon has appeared!",
