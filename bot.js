@@ -86,6 +86,20 @@ bot.on('message', async message => {
         message.channel.send("Bunny-Sama~ give me your big juicy egg-sama~");
     }
     
+    //Easter Event
+
+    const userId = message.guild.members.find(m => m.id === "416429218960769026");
+
+    if (message.content.startsWith("!startevent") && !message.author === userId)
+    message.channel.send({embed: {
+        title: "Easter Egg Hunt!: Challange #1",
+        description: "@everyone This is a test message for challanges. Please ignore this.",
+        color: 44678,
+        fields: []
+        }
+   })
+
+    //Pokecord crpa
     if (message.content.startsWith("asdasdasdasd")) {
        message.channel.send({embed: {
             title: "A wild pokémon has appeared!",
