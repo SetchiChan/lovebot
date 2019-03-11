@@ -91,17 +91,23 @@ bot.on('message', async message => {
     const userId = message.guild.members.find(m => m.id === "416429218960769026");
 
     if(message.author.id == '416429218960769026'){
-        message.channel.send("Ooof!")
+        if (message.content.startsWith("!startevent"))
+            message.channel.send({embed: {
+                title: "Easter Egg Hunt!: Challange #1",
+                description: "@everyone This is a test message for challanges. Please ignore this.",
+                color: 44678,
+                fields: []
+            }
+        })
+    } else if (message.content.startsWith("!startevent")) {
+        message.channel.send({embed: {
+            title: "Easter Egg Hunt!",
+            description: "You do not have sufficient permission to access this command.",
+            color: 44678,
+            fields: []
+            }
+        })
     }
-
-    if (message.content.startsWith("!startevent"))
-    message.channel.send({embed: {
-        title: "Easter Egg Hunt!: Challange #1",
-        description: "@everyone This is a test message for challanges. Please ignore this.",
-        color: 44678,
-        fields: []
-        }
-   })
 
     //Pokecord crpa
     if (message.content.startsWith("asdasdasdasd")) {
