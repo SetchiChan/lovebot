@@ -1,4 +1,4 @@
-const Discord = require('discord.js');
+/*const Discord = require('discord.js');
 const bot = new Discord.Client();
 
 const newUser = [];
@@ -134,4 +134,4 @@ bot.on('ready', () => {
 })
 
 
-bot.login(process.env.BOT_TOKEN);
+bot.login(process.env.BOT_TOKEN);*/
