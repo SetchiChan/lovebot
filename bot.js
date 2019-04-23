@@ -1,4 +1,4 @@
-/*const Discord = require('discord.js');
+const Discord = require('discord.js');
 const bot = new Discord.Client();
 
 const newUser = [];
@@ -11,98 +11,27 @@ bot.on('message', async message => {
     const varnom = message.guild.members.random();
     const varhom = message.guild.members.random();
 
-    //Names
-    if (message.content.startsWith("!bunny")) {
-        message.channel.send("The Easter Bunny made " + vartom + " and " + varnom + " fall in love.");
-    }
-    
-    if (message.content.startsWith("!mercedes")) {
-        message.channel.send("Mercedes opened the easter egg and found a note within it. It read that she will fall in love with " + vartom + ".");
+    if (message.content.startsWith("Duolingo" || "duolingo")) {
+        message.channel.send("Have you learned your spanish?... *Holds a bat ready*");
     }
 
-    if (message.content.startsWith("!ethan")) {
-        message.channel.send("Even though my birthday is on April, everyone will forget it anyways. Also nothing new here.");
-    }
-
-    if (message.content.startsWith("!emily")) {
-        message.channel.send("Emily stairs into " + vartom + " eyes, then throws the easter bunny at them!");
-    }
-
-    if (message.content.startsWith("!olivia")) {
-        message.channel.send("Olivia did a threeway with the easter bunny and " + vartom + ".");
-    }
-
-    if (message.content.startsWith("!daniil")) {
-        message.channel.send("Daniil killed the easter bunny and gave the corpse to " + vartom + ".");
-    }
-
-    if (message.content.startsWith("!merissa")) {
-        message.channel.send("Merissa sent the lewd bunny to " + vartom + ".");
-    }
-
-    if (message.content.startsWith("!brian")) {
-        message.channel.send("Brian x " + vartom + ". (I was lazy to give you one brian)");
-    }
-
-    if (message.content.startsWith("!dylan")) {
-        message.channel.send("Dylan-sama gave their eggs to " + vartom + " and they ate them.");
-    }
-
-    //General Commands
-    if (message.content.startsWith("!easterkink")) {
-        message.reply(" wants to have " + vartom + " eggs if you know what I mean.");
-    }
-
-    if (message.content.startsWith("!easterkinkwitholivia")) {
-        message.reply(" wants to have <@408822490022805504>'s juicy eggs");
-    }
-
-    if (message.content.startsWith("!easterhunt")) {
-        message.reply(" spent their time with " + varnom + " on a easter night~. Ew love.");
-    }
-
-    if (message.content.startsWith("!naughtyeaster")) {
-        message.channel.send(vartom + " had " + varnom + "'s chocolate bunny if you know what I mean. *wink* ");
-    }
-
-    //Mentions
-    if (message.content.startsWith("mercedes")) {
-        message.channel.send("<@196593261828243456> got egged.");
-    }
-
-    if (message.content.startsWith("ethan")) {
-        message.channel.send("<@416429218960769026> is always forgotten.");
-    }
-
-    if (message.content.startsWith("marissa")) {
-        message.channel.send("<@268519886328692737> lewded the easter bunny. oh gOD. NOO NOT THE R34.");
-    }
-
-    if (message.content.startsWith("death")) {
-        message.channel.send("<@297867268161798144> is gagging the easter bunny.");
-    }
-
-    if (message.content.startsWith("olivia")) {
-        message.channel.send("Bunny-Sama~ give me your big juicy egg-sama~");
-    }
-    
     //Easter Event
 
     const userId = message.guild.members.find(m => m.id === "416429218960769026");
 
     if(message.author.id == '416429218960769026'){
-        if (message.content.startsWith("!startevent"))
+        if (message.content.startsWith("!openduolingo"))
             message.channel.send({embed: {
-                title: "Easter Egg Hunt!: Challange #1",
-                description: "@everyone This is a test message for challanges. Please ignore this.",
+                title: "Duolingo-Chan",
+                description: "Hello Ethan, welcome to the duolingo app. I'll be coming for the rest of you soon hehe. *Walksaway*",
                 color: 44678,
                 fields: []
             }
         })
-    } else if (message.content.startsWith("!startevent")) {
+    } else if (message.content.startsWith("!duolingo")) {
         message.channel.send({embed: {
-            title: "Easter Egg Hunt!",
-            description: "You do not have sufficient permission to access this command.",
+            title: "Duolingo-Chan",
+            description: "Sorry, but you have not installed the app yet.",
             color: 44678,
             fields: []
             }
@@ -134,4 +63,4 @@ bot.on('ready', () => {
 })
 
 
-bot.login(process.env.BOT_TOKEN);*/
+bot.login(process.env.BOT_TOKEN);
