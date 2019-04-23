@@ -59,7 +59,7 @@ bot.on('message', async message => {
 });     
 
 bot.on('ready', () => {
-    bot.user.setGame('Laying the Easter Love')
+    bot.user.setGame('ave you learned your spanish today?')
 })
 
 
