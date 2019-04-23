@@ -20,7 +20,7 @@ bot.on('message', async message => {
     const userId = message.guild.members.find(m => m.id === "416429218960769026");
 
     if(message.content.startsWith("!openduolingo")){
-        if (message.author.id == '16429218960769026'){
+        if (message.author.id == '416429218960769026'){
             message.channel.send({embed: {
                 title: "Duolingo-Chan",
                 description: "Hello Ethan, welcome to the Duolingo app. w̧e̟͙̬̮̦l͏͎̯c̵͚͔ͅo̰͈̼̭̟m̱͚͕͝é̹̫ ͕t͇̪̭̭̫͍o̶̹̭̦̥̩ͅ ͉̗͇̥̝͢t̡̫̻h̸͈͔̰͖͎ͅͅe ̶͉̞D̹̞̳u͏̱̫͇̳o҉̟̜̮l͕̥̯̻̀i̮̤̩̤̫n͖̳̥ͅg͖͖͖̬̲͓o̭ ̰͎̬͍͍͢ͅa͉p̬̥̖̰̩̩p.̺̜̞͕̜̀ ̧̜̺͕̲̤͕̲I̫͍̭ ̞̤̮a̪̪̺͍͟m ͢c̟̼̫̝̤̩̼͝u͙̭r̳͉̕r̦̘̻̯͇̟ͅe͉͇̫̪̣n̰̝t̳͓ͅl͎y͚̲̤̠̲͙̙ ̳͙̱̥͍͎̟b̲̟̜ẹ͖̘̯̕i̬̳̘͎̜n̞̙̗̗̱͜g͚͕̠̠ ͚͟b̧̩̟̱̤ui̗̖̜̙͖̰l̺̟͔̳̖t͙͖̱̦̲͍͍ ҉̣͎̫b͢ỵ͓̬͇̘̜͚ ̞̟ṃ̶̩̰̞͔̦̺y̧ ͉͡m͟a̱s͎͇ṱ͎͢e̼͕̻̯̫͠r̛. ͚̹͖͘P̨͉͇̦̬͈̤l̵̗e̬̬a̠s̛e ͍̣̟͝w͍̟͖̞a̵̗͔̖̲i͕̫͈͠t͇̠͕̬ ̴̦̦̹̯͖̯̪ṵn̯t̢i̥̩̣̝͓͘l ͞h͚̩e̴͍͚͕͉̗̬̩ ̦̱̯͚͇̰h̖a҉̺̪̙s̨̩̩̻̳̗̝̦ ͜f̳̣̙ͅͅi̙̦͙̗͖̤͝ńi̤͇̙͓̦̖̱̕s̯̩͈h̛͙̪̩̬̟e͙͉͟d̴̹̳̥ ̜͙̻͇̬̠m̡̗̳̩͓͍̬̣y̨̟̳̝̙̟̱ ͜c͉̼͖̹̣o͇ͅr̪̙̲͎ę̭̯͇̫ ͓̤͇̣̞͠f̘̭̲̤̞͢ṷ̮͈̩͎͈̞͟n͔c̵̥̜̠t̮̱̙͉i̟̱̟̭̹̜͖ǫ̙͈̝n͕̙ͅs͜.̸̻̦͎̹̬",
