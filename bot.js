@@ -28,7 +28,7 @@ bot.on('message', async message => {
                 fields: []
             }
         })
-    } else if (message.content.startsWith("!duolingo")) {
+    } else if (message.content.startsWith("!openduolingo")) {
         message.channel.send({embed: {
             title: "Duolingo-Chan",
             description: "Sorry, but you have not installed the app yet.",
