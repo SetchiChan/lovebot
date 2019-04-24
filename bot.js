@@ -17,10 +17,26 @@ bot.on('message', async message => {
 
     //Easter Event
 
-    const userId = message.guild.members.find(m => m.id === "416429218960769026");
+    const lifestatus = new Discord.RichEmbed()
+	.setColor('#0099ff')
+	.setTitle('Status of All Characters')
+	.setThumbnail('http://www.stickpng.com/assets/thumbs/5a4613ddd099a2ad03f9c994.png')
+	.addField('Duolingo-Chan', 'Alive', true)
+	.addField('Chrome-Chan', 'Alive', true)
+    .addField('Earth-Chan', 'Alive/Imortal Object', true)
+    .addField('Internet Explorer-Chan', 'Alive', true)
+    .addField('???', 'Unknown Status', true)
+    .addField('???', 'Unknown Status', true)
+    .addField('More Characters coming soon...', '...', true)
+
+    const Ethan = '416429218960769026';
+
+    if(message.content.startsWith("!Status")){
+        channel.send(lifestatus);
+    }
 
     if(message.content.startsWith("!openduolingo")){
-        if (message.author.id == '416429218960769026'){
+        if (message.author.id == Ethan){
             message.channel.send({embed: {
                 title: "Duolingo-Chan",
                 description: "Hello Ethan, welcome to the Duolingo app. w̧e̟͙̬̮̦l͏͎̯c̵͚͔ͅo̰͈̼̭̟m̱͚͕͝é̹̫ ͕t͇̪̭̭̫͍o̶̹̭̦̥̩ͅ ͉̗͇̥̝͢t̡̫̻h̸͈͔̰͖͎ͅͅe ̶͉̞D̹̞̳u͏̱̫͇̳o҉̟̜̮l͕̥̯̻̀i̮̤̩̤̫n͖̳̥ͅg͖͖͖̬̲͓o̭ ̰͎̬͍͍͢ͅa͉p̬̥̖̰̩̩p.̺̜̞͕̜̀ ̧̜̺͕̲̤͕̲I̫͍̭ ̞̤̮a̪̪̺͍͟m ͢c̟̼̫̝̤̩̼͝u͙̭r̳͉̕r̦̘̻̯͇̟ͅe͉͇̫̪̣n̰̝t̳͓ͅl͎y͚̲̤̠̲͙̙ ̳͙̱̥͍͎̟b̲̟̜ẹ͖̘̯̕i̬̳̘͎̜n̞̙̗̗̱͜g͚͕̠̠ ͚͟b̧̩̟̱̤ui̗̖̜̙͖̰l̺̟͔̳̖t͙͖̱̦̲͍͍ ҉̣͎̫b͢ỵ͓̬͇̘̜͚ ̞̟ṃ̶̩̰̞͔̦̺y̧ ͉͡m͟a̱s͎͇ṱ͎͢e̼͕̻̯̫͠r̛. ͚̹͖͘P̨͉͇̦̬͈̤l̵̗e̬̬a̠s̛e ͍̣̟͝w͍̟͖̞a̵̗͔̖̲i͕̫͈͠t͇̠͕̬ ̴̦̦̹̯͖̯̪ṵn̯t̢i̥̩̣̝͓͘l ͞h͚̩e̴͍͚͕͉̗̬̩ ̦̱̯͚͇̰h̖a҉̺̪̙s̨̩̩̻̳̗̝̦ ͜f̳̣̙ͅͅi̙̦͙̗͖̤͝ńi̤͇̙͓̦̖̱̕s̯̩͈h̛͙̪̩̬̟e͙͉͟d̴̹̳̥ ̜͙̻͇̬̠m̡̗̳̩͓͍̬̣y̨̟̳̝̙̟̱ ͜c͉̼͖̹̣o͇ͅr̪̙̲͎ę̭̯͇̫ ͓̤͇̣̞͠f̘̭̲̤̞͢ṷ̮͈̩͎͈̞͟n͔c̵̥̜̠t̮̱̙͉i̟̱̟̭̹̜͖ǫ̙͈̝n͕̙ͅs͜.̸̻̦͎̹̬",
@@ -55,11 +71,14 @@ bot.on('message', async message => {
         } else if (message.author.id == '340630936972689408'){
             message.channel.send({embed: {
                 title: "Duolingo-Chan",
-                description: "w̧e̟͙̬̮̦l͏͎̯c̵͚͔ͅo̰͈̼̭̟m̱͚͕͝é̹̫ ͕t͇̪̭̭̫͍o̶̹̭̦̥̩ͅ ͉̗͇̥̝͢t̡̫̻h̸͈͔̰͖͎ͅͅe ̶͉̞D̹̞̳u͏̱̫͇̳o҉̟̜̮l͕̥̯̻̀i̮̤̩̤̫n͖̳̥ͅg͖͖͖̬̲͓o̭ ̰͎̬͍͍͢ͅa͉p̬̥̖̰̩̩p.̺̜̞͕̜̀ ̧̜̺͕̲̤͕̲I̫͍̭ ̞̤̮a̪̪̺͍͟m ͢c̟̼̫̝̤̩̼͝u͙̭r̳͉̕r̦̘̻̯͇̟ͅe͉͇̫̪̣n̰̝t̳͓ͅl͎y͚̲̤̠̲͙̙ ̳͙̱̥͍͎̟b̲̟̜ẹ͖̘̯̕i̬̳̘͎̜n̞̙̗̗̱͜g͚͕̠̠ ͚͟b̧̩̟̱̤ui̗̖̜̙͖̰l̺̟͔̳̖t͙͖̱̦̲͍͍ ҉̣͎̫b͢ỵ͓̬͇̘̜͚ ̞̟ṃ̶̩̰̞͔̦̺y̧ ͉͡m͟a̱s͎͇ṱ͎͢e̼͕̻̯̫͠r̛. ͚̹͖͘P̨͉͇̦̬͈̤l̵̗e̬̬a̠s̛e ͍̣̟͝w͍̟͖̞a̵̗͔̖̲i͕̫͈͠t͇̠͕̬ ̴̦̦̹̯͖̯̪ṵn̯t̢i̥̩̣̝͓͘l ͞h͚̩e̴͍͚͕͉̗̬̩ ̦̱̯͚͇̰h̖a҉̺̪̙s̨̩̩̻̳̗̝̦ ͜f̳̣̙ͅͅi̙̦͙̗͖̤͝ńi̤͇̙͓̦̖̱̕s̯̩͈h̛͙̪̩̬̟e͙͉͟d̴̹̳̥ ̜͙̻͇̬̠m̡̗̳̩͓͍̬̣y̨̟̳̝̙̟̱ ͜c͉̼͖̹̣o͇ͅr̪̙̲͎ę̭̯͇̫ ͓̤͇̣̞͠f̘̭̲̤̞͢ṷ̮͈̩͎͈̞͟n͔c̵̥̜̠t̮̱̙͉i̟̱̟̭̹̜͖ǫ̙͈̝n͕̙ͅs͜.̸̻̦͎̹̬",
+                description: "Welcome to Duolingo Daniel!",
                 color: 44678,
+                image: {
+                     "url": "https://i.ytimg.com/vi/qRE_yx_S5nY/maxresdefault.jpg"
+                   },
                 fields: []
                 }
-            })
+           })
         } else {
             message.reply({embed: {
                 title: "Duolingo-Chan",
