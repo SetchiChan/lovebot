@@ -18,6 +18,11 @@ bot.on('message', async message => {
     //Easter Event
 
     const Ethan = '416429218960769026';
+    const Mercedes = '';
+    const Daniel = '';
+    const Olivia = ''
+    const Dylan = '';
+    const Marissa ='';
 
     if(message.content.startsWith("!Status")){
         message.channel.send({embed: {
@@ -33,12 +38,12 @@ bot.on('message', async message => {
                     value: 'Imortal Object',
                 },
                 {
-                    name: 'Duolingo-Chan',
-                    value: 'Alive',
+                    name: 'Love-Chan',
+                    value: 'Imortal Object',
                 },
                 {
-                    name: '???',
-                    value: 'Unknown Status',
+                    name: 'Duolingo-Chan',
+                    value: 'Alive',
                 },
                 {
                     name: 'Chrome-Chan',
@@ -53,15 +58,72 @@ bot.on('message', async message => {
         });     
     }
 
+    //Love-Chan
+    if(message.content.startsWith("!lovekun ship")){
+        message.channel.send({embed: {
+            title: "Love-Kun",
+            description: "Hey there love birds~ " + vartom + " and " + varnom + " are perfect together. <3",
+            color: 44678,
+            image: {
+                 "url": "https://pm1.narvii.com/6739/5589806a476247d5bd3052a4690bc19d176373cev2_hq.jpg"
+               },
+            fields: []
+            }
+       })
+    }
+
+    if(message.content.startsWith("!lovekun ethan")){
+        message.channel.send({embed: {
+            title: "Love-Kun",
+            description: "Hmm, Ethan is a thot. He has no love.",
+            color: 15077906,
+            image: {
+                 "url": "https://pm1.narvii.com/6739/5589806a476247d5bd3052a4690bc19d176373cev2_hq.jpg"
+               },
+            fields: []
+            }
+       })
+    }
+
+    if(message.content.startsWith("!lovekun mercedes")){
+        message.channel.send({embed: {
+            title: "Love-Kun",
+            description: "Merecedes's perfect match is... " + vartom + ".",
+            color: 15077906,
+            image: {
+                 "url": "https://pm1.narvii.com/6739/5589806a476247d5bd3052a4690bc19d176373cev2_hq.jpg"
+               },
+            fields: []
+            }
+       })
+    }
+
+    if(message.content.startsWith("!lovekun marissa")){
+        message.channel.send({embed: {
+            title: "Love-Kun",
+            description: "Marissa's pet is " + vartom + ".",
+            color: 15077906,
+            image: {
+                 "url": "https://pm1.narvii.com/6739/5589806a476247d5bd3052a4690bc19d176373cev2_hq.jpg"
+               },
+            fields: []
+            }
+       })
+    }
+
+    //Duolingo-Chan Stuff
     if(message.content.startsWith("!openduolingo")){
         if (message.author.id == Ethan){
             message.channel.send({embed: {
                 title: "Duolingo-Chan",
-                description: "Hello Ethan, welcome to the Duolingo app. w̧e̟͙̬̮̦l͏͎̯c̵͚͔ͅo̰͈̼̭̟m̱͚͕͝é̹̫ ͕t͇̪̭̭̫͍o̶̹̭̦̥̩ͅ ͉̗͇̥̝͢t̡̫̻h̸͈͔̰͖͎ͅͅe ̶͉̞D̹̞̳u͏̱̫͇̳o҉̟̜̮l͕̥̯̻̀i̮̤̩̤̫n͖̳̥ͅg͖͖͖̬̲͓o̭ ̰͎̬͍͍͢ͅa͉p̬̥̖̰̩̩p.̺̜̞͕̜̀ ̧̜̺͕̲̤͕̲I̫͍̭ ̞̤̮a̪̪̺͍͟m ͢c̟̼̫̝̤̩̼͝u͙̭r̳͉̕r̦̘̻̯͇̟ͅe͉͇̫̪̣n̰̝t̳͓ͅl͎y͚̲̤̠̲͙̙ ̳͙̱̥͍͎̟b̲̟̜ẹ͖̘̯̕i̬̳̘͎̜n̞̙̗̗̱͜g͚͕̠̠ ͚͟b̧̩̟̱̤ui̗̖̜̙͖̰l̺̟͔̳̖t͙͖̱̦̲͍͍ ҉̣͎̫b͢ỵ͓̬͇̘̜͚ ̞̟ṃ̶̩̰̞͔̦̺y̧ ͉͡m͟a̱s͎͇ṱ͎͢e̼͕̻̯̫͠r̛. ͚̹͖͘P̨͉͇̦̬͈̤l̵̗e̬̬a̠s̛e ͍̣̟͝w͍̟͖̞a̵̗͔̖̲i͕̫͈͠t͇̠͕̬ ̴̦̦̹̯͖̯̪ṵn̯t̢i̥̩̣̝͓͘l ͞h͚̩e̴͍͚͕͉̗̬̩ ̦̱̯͚͇̰h̖a҉̺̪̙s̨̩̩̻̳̗̝̦ ͜f̳̣̙ͅͅi̙̦͙̗͖̤͝ńi̤͇̙͓̦̖̱̕s̯̩͈h̛͙̪̩̬̟e͙͉͟d̴̹̳̥ ̜͙̻͇̬̠m̡̗̳̩͓͍̬̣y̨̟̳̝̙̟̱ ͜c͉̼͖̹̣o͇ͅr̪̙̲͎ę̭̯͇̫ ͓̤͇̣̞͠f̘̭̲̤̞͢ṷ̮͈̩͎͈̞͟n͔c̵̥̜̠t̮̱̙͉i̟̱̟̭̹̜͖ǫ̙͈̝n͕̙ͅs͜.̸̻̦͎̹̬",
+                description: "Welcome to Duolingo Daniel!",
                 color: 44678,
+                image: {
+                     "url": "https://i.ytimg.com/vi/qRE_yx_S5nY/maxresdefault.jpg"
+                   },
                 fields: []
-            }
-        })
+                }
+           })
         } else if (message.author.id == '408822490022805504'){
             message.channel.send({embed: {
                 title: "Duolingo-Chan",
@@ -98,13 +160,16 @@ bot.on('message', async message => {
                 }
            })
         } else {
-            message.reply({embed: {
+            message.channel.send({embed: {
                 title: "Duolingo-Chan",
-                description: "An error has occured. Please ping Ethan if you'd like to join my game. :)",
+                description: "Welcome to Duolingo Daniel!",
                 color: 44678,
+                image: {
+                     "url": "https://i.ytimg.com/vi/qRE_yx_S5nY/maxresdefault.jpg"
+                   },
                 fields: []
                 }
-            })
+           })
         }
     }
 
@@ -135,7 +200,7 @@ bot.on('message', async message => {
         }
     }
 
-    //Pokecord crpa
+    //Example
     if (message.content.startsWith("asdasdasdasd")) {
        message.channel.send({embed: {
             title: "A wild pokémon has appeared!",
@@ -147,10 +212,6 @@ bot.on('message', async message => {
             fields: []
             }
        })
-    }
-    
-    if (message.content.startsWith("p!catch lewd pikachu")) {
-        message.channel.send("Congratulations <@416429218960769026> You caught a level 69 lewd Pikachu!");
     }
 
 });     
