@@ -17,22 +17,26 @@ bot.on('message', async message => {
 
     //Easter Event
 
-    const lifestatus = new Discord.RichEmbed()
+    const exampleEmbed = new Discord.RichEmbed()
 	.setColor('#0099ff')
-	.setTitle('Status of All Characters')
-	.setThumbnail('http://www.stickpng.com/assets/thumbs/5a4613ddd099a2ad03f9c994.png')
-	.addField('Duolingo-Chan', 'Alive', true)
-	.addField('Chrome-Chan', 'Alive', true)
-    .addField('Earth-Chan', 'Alive/Imortal Object', true)
-    .addField('Internet Explorer-Chan', 'Alive', true)
-    .addField('???', 'Unknown Status', true)
-    .addField('???', 'Unknown Status', true)
-    .addField('More Characters coming soon...', '...', true)
+	.setTitle('Some title')
+	.setURL('https://discord.js.org/')
+	.setAuthor('Some name', 'https://i.imgur.com/wSTFkRM.png', 'https://discord.js.org')
+	.setDescription('Some description here')
+	.setThumbnail('https://i.imgur.com/wSTFkRM.png')
+	.addField('Regular field title', 'Some value here')
+	.addBlankField()
+	.addField('Inline field title', 'Some value here', true)
+	.addField('Inline field title', 'Some value here', true)
+	.addField('Inline field title', 'Some value here', true)
+	.setImage('https://i.imgur.com/wSTFkRM.png')
+	.setTimestamp()
+	.setFooter('Some footer text here', 'https://i.imgur.com/wSTFkRM.png');
 
     const Ethan = '416429218960769026';
 
     if(message.content.startsWith("!Status")){
-        channel.send(lifestatus);
+        channel.send(exampleEmbed);
     }
 
     if(message.content.startsWith("!openduolingo")){
@@ -138,7 +142,7 @@ bot.on('message', async message => {
 });     
 
 bot.on('ready', () => {
-    bot.user.setGame('Welcome to the internet!')
+    bot.user.setGame('Welcome to the internet!!')
 })
 
 
