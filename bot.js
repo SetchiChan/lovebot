@@ -72,6 +72,7 @@ bot.on('message', async message => {
        })
     }
 
+    //Earth-Kun
     if (message.isMentioned(client.user)) {
         message.reply({embed: {
             author: {
@@ -85,7 +86,6 @@ bot.on('message', async message => {
        })
     }
     
-    //Love-Chan
     if(message.content.startsWith("!command")){
         message.channel.send({embed: {
             author: {
@@ -93,6 +93,21 @@ bot.on('message', async message => {
                 icon_url: "https://vignette.wikia.nocookie.net/virtualyoutuber/images/f/f2/EarthChan.jpg/revision/latest?cb=20180527004331"
             },
             description: "Oh sorry... but Ethan didn't fix this yet. My bad.",
+            fields: []
+            }
+       })
+    }
+
+    //Love-Chan
+
+    if(message.content.startsWith("!lovekun ship")){
+        message.channel.send({embed: {
+            author: {
+                name: "Love-Kun",
+                icon_url: "https://pm1.narvii.com/6739/5589806a476247d5bd3052a4690bc19d176373cev2_hq.jpg"
+            },
+            description: vartom + " and " + varnom + " kissing in a tree. K I S S I N G~",
+            color: 15077906,
             fields: []
             }
        })
@@ -106,9 +121,6 @@ bot.on('message', async message => {
             },
             description: "Hmm, Ethan is a thot. He has no love.",
             color: 15077906,
-            image: {
-                 "url": "https://pm1.narvii.com/6739/5589806a476247d5bd3052a4690bc19d176373cev2_hq.jpg"
-               },
             fields: []
             }
        })
