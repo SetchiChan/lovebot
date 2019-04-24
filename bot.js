@@ -22,50 +22,33 @@ bot.on('message', async message => {
     if(message.content.startsWith("!Status")){
         message.channel.send({embed: {
             color: 0x0099ff,
-            title: 'Some title',
-            url: 'https://discord.js.org',
-            author: {
-                name: 'Some name',
-                icon_url: 'https://i.imgur.com/wSTFkRM.png',
-                url: 'https://discord.js.org',
-            },
-            description: 'Some description here',
+            title: 'Status of All Characters',
+            description: 'You can see who is alive or dead here!',
             thumbnail: {
-                url: 'https://i.imgur.com/wSTFkRM.png',
+                url: 'https://images.pexels.com/photos/953214/pexels-photo-953214.jpeg?cs=srgb&dl=backgrounds-blank-blue-953214.jpg&fm=jpg',
             },
             fields: [
                 {
-                    name: 'Regular field title',
-                    value: 'Some value here',
+                    name: 'Earth-Chan',
+                    value: 'Imortal Object',
                 },
                 {
-                    name: '\u200b',
-                    value: '\u200b',
+                    name: 'Duolingo-Chan',
+                    value: 'Alive',
                 },
                 {
-                    name: 'Inline field title',
-                    value: 'Some value here',
-                    inline: true,
+                    name: '???',
+                    value: 'Unknown Status',
                 },
                 {
-                    name: 'Inline field title',
-                    value: 'Some value here',
-                    inline: true,
+                    name: 'Chrome-Chan',
+                    value: 'Alive',
                 },
                 {
-                    name: 'Inline field title',
-                    value: 'Some value here',
-                    inline: true,
+                    name: 'More Characters will be added...',
+                    value: '...',
                 },
             ],
-            image: {
-                url: 'https://i.imgur.com/wSTFkRM.png',
-            },
-            timestamp: new Date(),
-            footer: {
-                text: 'Some footer text here',
-                icon_url: 'https://i.imgur.com/wSTFkRM.png',
-            },
         }
         });     
     }
