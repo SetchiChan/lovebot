@@ -17,26 +17,57 @@ bot.on('message', async message => {
 
     //Easter Event
 
-    const exampleEmbed = new Discord.RichEmbed()
-	.setColor('#0099ff')
-	.setTitle('Some title')
-	.setURL('https://discord.js.org/')
-	.setAuthor('Some name', 'https://i.imgur.com/wSTFkRM.png', 'https://discord.js.org')
-	.setDescription('Some description here')
-	.setThumbnail('https://i.imgur.com/wSTFkRM.png')
-	.addField('Regular field title', 'Some value here')
-	.addBlankField()
-	.addField('Inline field title', 'Some value here', true)
-	.addField('Inline field title', 'Some value here', true)
-	.addField('Inline field title', 'Some value here', true)
-	.setImage('https://i.imgur.com/wSTFkRM.png')
-	.setTimestamp()
-	.setFooter('Some footer text here', 'https://i.imgur.com/wSTFkRM.png');
-
     const Ethan = '416429218960769026';
 
     if(message.content.startsWith("!Status")){
-        channel.send(exampleEmbed);
+        message.channel.send({
+            color: 0x0099ff,
+            title: 'Some title',
+            url: 'https://discord.js.org',
+            author: {
+                name: 'Some name',
+                icon_url: 'https://i.imgur.com/wSTFkRM.png',
+                url: 'https://discord.js.org',
+            },
+            description: 'Some description here',
+            thumbnail: {
+                url: 'https://i.imgur.com/wSTFkRM.png',
+            },
+            fields: [
+                {
+                    name: 'Regular field title',
+                    value: 'Some value here',
+                },
+                {
+                    name: '\u200b',
+                    value: '\u200b',
+                },
+                {
+                    name: 'Inline field title',
+                    value: 'Some value here',
+                    inline: true,
+                },
+                {
+                    name: 'Inline field title',
+                    value: 'Some value here',
+                    inline: true,
+                },
+                {
+                    name: 'Inline field title',
+                    value: 'Some value here',
+                    inline: true,
+                },
+            ],
+            image: {
+                url: 'https://i.imgur.com/wSTFkRM.png',
+            },
+            timestamp: new Date(),
+            footer: {
+                text: 'Some footer text here',
+                icon_url: 'https://i.imgur.com/wSTFkRM.png',
+            },
+        });
+        
     }
 
     if(message.content.startsWith("!openduolingo")){
@@ -142,7 +173,7 @@ bot.on('message', async message => {
 });     
 
 bot.on('ready', () => {
-    bot.user.setGame('Welcome to the internet!!')
+    bot.user.setGame('Welcome to the internet!')
 })
 
 
