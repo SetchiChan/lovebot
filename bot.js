@@ -63,6 +63,7 @@ bot.on('message', async message => {
         message.channel.send({embed: {
             title: "Love-Kun",
             author: {
+                name: "Love-Kun",
                 icon_url: "https://pm1.narvii.com/6739/5589806a476247d5bd3052a4690bc19d176373cev2_hq.jpg"
             },
             description: "Hey there love birds~ " + vartom + " and " + varnom + " are perfect together. <3",
