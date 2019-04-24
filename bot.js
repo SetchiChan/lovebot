@@ -78,7 +78,7 @@ bot.on('message', async message => {
                 title: "Duolingo-Chan",
                 description: "Hello Ethan, Thank you for installing Google Chrome!",
                 color: 44678,
-                thumbnail: {
+                image: {
                     "url": "https://i.imgur.com/yTGegZ7.png"
                   },
                 fields: []
@@ -89,7 +89,7 @@ bot.on('message', async message => {
                 title: "Chrome-Chan",
                 description: "Hello new user! I am Google-Chan. Nice to meet you!",
                 color: 44678,
-                thumbnail: {
+                image: {
                     "url": "https://i.imgur.com/yTGegZ7.png"
                   },
                 fields: []
@@ -118,7 +118,7 @@ bot.on('message', async message => {
 });     
 
 bot.on('ready', () => {
-    bot.user.setGame('ave you learned your spanish today?')
+    bot.user.setGame('Welcome to the anime internet.')
 })
 
 
