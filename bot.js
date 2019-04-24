@@ -75,26 +75,27 @@ bot.on('message', async message => {
     if(message.content.startsWith("!openchrome")){
         if (message.author.id == '416429218960769026'){
             message.channel.send({embed: {
-                title: "Duolingo-Chan",
-                description: "Hello Ethan, Thank you for installing Google Chrome!",
+                title: "Google-Chan",
+                description: "Thank you ethan for installing Google Chrome!",
                 color: 44678,
                 image: {
-                    "url": "https://i.imgur.com/yTGegZ7.png"
-                  },
+                     "url": "https://i.imgur.com/yTGegZ7.png"
+                   },
                 fields: []
-            }
-        })
+                }
+           })
         } else {
             message.reply({embed: {
-                title: "Chrome-Chan",
-                description: "Hello new user! I am Google-Chan. Nice to meet you!",
+                title: "Google-Chan",
+                description: "Hello new user! Welcome to Google!",
                 color: 44678,
                 image: {
-                    "url": "https://i.imgur.com/yTGegZ7.png"
-                  },
+                     "url": "https://i.imgur.com/yTGegZ7.png"
+                   },
                 fields: []
-            }
-        })
+                }
+           })
+        }
     }
 
     //Pokecord crpa
@@ -118,7 +119,7 @@ bot.on('message', async message => {
 });     
 
 bot.on('ready', () => {
-    bot.user.setGame('Welcome to the anime internet.')
+    bot.user.setGame('Welcome to the internet!')
 })
 
 
