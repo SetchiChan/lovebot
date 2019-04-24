@@ -64,7 +64,7 @@ bot.on('message', async message => {
             title: "Love-Kun",
             description: "Hey there love birds~ " + vartom + " and " + varnom + " are perfect together. <3",
             color: 44678,
-            image: {
+            thumbnail: {
                  "url": "https://pm1.narvii.com/6739/5589806a476247d5bd3052a4690bc19d176373cev2_hq.jpg"
                },
             fields: []
