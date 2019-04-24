@@ -20,7 +20,7 @@ bot.on('message', async message => {
     const Ethan = '416429218960769026';
 
     if(message.content.startsWith("!Status")){
-        message.channel.send({
+        message.channel.send({embed: {
             color: 0x0099ff,
             title: 'Some title',
             url: 'https://discord.js.org',
@@ -66,8 +66,8 @@ bot.on('message', async message => {
                 text: 'Some footer text here',
                 icon_url: 'https://i.imgur.com/wSTFkRM.png',
             },
-        });
-        
+        }
+        });     
     }
 
     if(message.content.startsWith("!openduolingo")){
