@@ -62,11 +62,11 @@ bot.on('message', async message => {
     if(message.content.startsWith("!lovekun ship")){
         message.channel.send({embed: {
             title: "Love-Kun",
+            author: {
+                icon_url: "https://pm1.narvii.com/6739/5589806a476247d5bd3052a4690bc19d176373cev2_hq.jpg"
+            },
             description: "Hey there love birds~ " + vartom + " and " + varnom + " are perfect together. <3",
             color: 44678,
-            thumbnail: {
-                 "url": "https://pm1.narvii.com/6739/5589806a476247d5bd3052a4690bc19d176373cev2_hq.jpg"
-               },
             fields: []
             }
        })
