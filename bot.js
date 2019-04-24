@@ -73,7 +73,7 @@ bot.on('message', async message => {
     }
 
     //Earth-Kun
-    if (message.isMentioned(client.user)) {
+    if (message.isMentioned(bot.user)) {
         message.reply({embed: {
             author: {
                 name: "Earth-Chan",
