@@ -71,6 +71,32 @@ bot.on('message', async message => {
         }
     }
 
+    //Google-Chan
+    if(message.content.startsWith("!openchrome")){
+        if (message.author.id == '416429218960769026'){
+            message.channel.send({embed: {
+                title: "Duolingo-Chan",
+                description: "Hello Ethan, Thank you for installing Google Chrome!",
+                color: 44678,
+                fields: [],
+                thumbnail: {
+                    url: "https://i.imgur.com/yTGegZ7.png"
+                }
+            }
+        })
+        } else {
+            message.reply({embed: {
+                title: "Chrome-Chan",
+                description: "Hello new user! I am Google-Chan. Nice to meet you!",
+                color: 44678,
+                fields: [],
+                thumbnail: {
+                    url: "https://i.imgur.com/yTGegZ7.png"
+                }
+            }
+        })
+    }
+
     //Pokecord crpa
     if (message.content.startsWith("asdasdasdasd")) {
        message.channel.send({embed: {
