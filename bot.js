@@ -72,7 +72,7 @@ bot.on('message', async message => {
        })
     }
 
-    //Earth-Kun
+    //Earth-Chan
     if (message.isMentioned(bot.user)) {
         message.reply({embed: {
             author: {
@@ -97,6 +97,71 @@ bot.on('message', async message => {
             }
        })
     }
+
+    var lovemeter = 5;
+
+    if(message.content.startsWith("!earthchan flirt")){
+        message.channel.send({embed: {
+            author: {
+                name: "Earth-Chan",
+                icon_url: "https://vignette.wikia.nocookie.net/virtualyoutuber/images/f/f2/EarthChan.jpg/revision/latest?cb=20180527004331"
+            },
+            description: "(Planning for this command to be random) Oh my... Please use '!earthchan yes' to say earth-chan is flat or '!earthchan no' to say earth-chan isn't flat.",
+            image: {
+                url: "https://i.ytimg.com/vi/0wQ5bFRoJe0/maxresdefault.jpg"
+            },
+            fields: []
+            }
+       })
+    }
+
+    if(message.content.startsWith("!earthchan flirt")){
+        message.channel.send({embed: {
+            author: {
+                name: "Earth-Chan",
+                icon_url: "https://vignette.wikia.nocookie.net/virtualyoutuber/images/f/f2/EarthChan.jpg/revision/latest?cb=20180527004331"
+            },
+            description: "(Planning for this command to be random) Oh my... Please use '!earthchan yes' to say earth-chan is flat or '!earthchan no' to say earth-chan isn't flat.",
+            image: {
+                url: "https://i.ytimg.com/vi/0wQ5bFRoJe0/maxresdefault.jpg"
+            },
+            fields: []
+            }
+       })
+    }
+
+    if(message.content.startsWith("!earthchan yes")){
+        lovemeter = lovemeter - 1
+        message.channel.send({embed: {
+            author: {
+                name: "Earth-Chan",
+                icon_url: "https://vignette.wikia.nocookie.net/virtualyoutuber/images/f/f2/EarthChan.jpg/revision/latest?cb=20180527004331"
+            },
+            description: "oh... Mood:" + lovemeter + "/5." ,
+            image: {
+                url: "https://images-cdn.9gag.com/photo/ad9mpwB_700b.jpg"
+            },
+            fields: []
+            }
+       })
+    }
+
+    if(message.content.startsWith("!earthchan no")){
+        lovemeter = lovemeter + 1
+        message.channel.send({embed: {
+            author: {
+                name: "Earth-Chan",
+                icon_url: "https://vignette.wikia.nocookie.net/virtualyoutuber/images/f/f2/EarthChan.jpg/revision/latest?cb=20180527004331"
+            },
+            description: "oh Thank you! Mood:" + lovemeter + "/5." ,
+            image: {
+                url: "https://pm1.narvii.com/6686/a280a434bbcef5a048345768a730f1a0258ccea2_hq.jpg"
+            },
+            fields: []
+            }
+       })
+    }
+
 
     //Love-Chan
 
