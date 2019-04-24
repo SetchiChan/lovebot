@@ -57,11 +57,10 @@ bot.on('message', async message => {
         }
         });     
     }
-
-    //Love-Chan
+    
+    //Earth-chan
     if(message.content.startsWith("!lovekun ship")){
         message.channel.send({embed: {
-            title: "Love-Kun",
             author: {
                 name: "Love-Kun",
                 icon_url: "https://pm1.narvii.com/6739/5589806a476247d5bd3052a4690bc19d176373cev2_hq.jpg"
@@ -73,9 +72,38 @@ bot.on('message', async message => {
        })
     }
 
+    if (message.isMentioned(client.user)) {
+        message.reply({embed: {
+            author: {
+                name: "Earth-Chan",
+                icon_url: "https://vignette.wikia.nocookie.net/virtualyoutuber/images/f/f2/EarthChan.jpg/revision/latest?cb=20180527004331"
+            },
+            description: "Yes? Oh! Please use !command to see the available commands!",
+            color: 44678,
+            fields: []
+            }
+       })
+    }
+    
+    //Love-Chan
+    if(message.content.startsWith("!command")){
+        message.channel.send({embed: {
+            author: {
+                name: "Earth-Chan",
+                icon_url: "https://vignette.wikia.nocookie.net/virtualyoutuber/images/f/f2/EarthChan.jpg/revision/latest?cb=20180527004331"
+            },
+            description: "Oh sorry... but Ethan didn't fix this yet. My bad.",
+            fields: []
+            }
+       })
+    }
+
     if(message.content.startsWith("!lovekun ethan")){
         message.channel.send({embed: {
-            title: "Love-Kun",
+            author: {
+                name: "Love-Kun",
+                icon_url: "https://pm1.narvii.com/6739/5589806a476247d5bd3052a4690bc19d176373cev2_hq.jpg"
+            },
             description: "Hmm, Ethan is a thot. He has no love.",
             color: 15077906,
             image: {
@@ -88,7 +116,10 @@ bot.on('message', async message => {
 
     if(message.content.startsWith("!lovekun mercedes")){
         message.channel.send({embed: {
-            title: "Love-Kun",
+            author: {
+                name: "Love-Kun",
+                icon_url: "https://pm1.narvii.com/6739/5589806a476247d5bd3052a4690bc19d176373cev2_hq.jpg"
+            },
             description: "Merecedes's perfect match is... " + vartom + ".",
             color: 15077906,
             image: {
@@ -101,7 +132,10 @@ bot.on('message', async message => {
 
     if(message.content.startsWith("!lovekun marissa")){
         message.channel.send({embed: {
-            title: "Love-Kun",
+            author: {
+                name: "Love-Kun",
+                icon_url: "https://pm1.narvii.com/6739/5589806a476247d5bd3052a4690bc19d176373cev2_hq.jpg"
+            },
             description: "Marissa's pet is " + vartom + ".",
             color: 15077906,
             image: {
