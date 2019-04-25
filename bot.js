@@ -394,20 +394,17 @@ bot.on('message', async message => {
         }); 
 
         var finalnumber = getRandomInt(4);
-        var trueorfales = false;
 
-        if (trueorfales == false){
             if (finalnumber == 0) {
-                trueorfales = true;
                 message.reply({embed: {
                     color: 15924992,
                     author: {
                         name: "Chrome-Chan",
                         icon_url: "https://i.imgur.com/yTGegZ7.png"
                     },
-                    description: 'Lemme love you',
+                    description: 'You fucked up.',
                     image: {
-                        "url": "https://pics.me.me/lewded-pikachu-37517665.png"
+                        "url": "https://i.imgur.com/0rQMlJW.jpg"
                       },
                     fields: [],
                 }
@@ -420,9 +417,9 @@ bot.on('message', async message => {
                         name: "Chrome-Chan",
                         icon_url: "https://i.imgur.com/yTGegZ7.png"
                     },
-                    description: 'Its not loaded.',
+                    description: 'You were seen trying to search for something... Chrome-Chan suggested something else.',
                     image: {
-                        "url": "https://pics.me.me/lewded-pikachu-37517665.png"
+                        "url": "https://i.imgur.com/urIsap2.jpg"
                       },
                     fields: [],
                 }
@@ -435,9 +432,9 @@ bot.on('message', async message => {
                         name: "Chrome-Chan",
                         icon_url: "https://i.imgur.com/yTGegZ7.png"
                     },
-                    description: 'Or Not',
+                    description: '*You steal chrome-chans last ram stick.',
                     image: {
-                        "url": "https://pics.me.me/lewded-pikachu-37517665.png"
+                        "url": "https://i.imgur.com/RbiX5v2.jpg"
                       },
                     fields: [],
                 }
@@ -453,18 +450,8 @@ bot.on('message', async message => {
                 }
             });
         }
-        } else if (trueorfales == true) {
-            message.reply({embed: {
-                color: 15924992,
-                author: {
-                    name: "Chrome-Chan",
-                    icon_url: "https://i.imgur.com/yTGegZ7.png"
-                },
-                description: 'Oh sorry dearie, someone is using me.',
-            }
-            }); 
-        }
     }
+
 
     //reset
     if(message.content.startsWith("!resetvar")){
