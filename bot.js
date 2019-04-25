@@ -20,7 +20,7 @@ bot.on('message', async message => {
     const Dylan = '494974507283513362';
     const Marissa ='268519886328692737';
 
-    if(message.content.startsWith("!Status")){
+    if(message.content.startsWith("!status")){
         message.channel.send({embed: {
             color: 0x0099ff,
             title: 'Status of All Characters',
