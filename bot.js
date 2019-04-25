@@ -355,6 +355,11 @@ bot.on('message', async message => {
     }
 
     //Google-Chan
+
+    function getRandomInt(max) {
+        return Math.floor(Math.random() * Math.floor(max));
+    }
+
     if (message.content.startsWith("!chromechan help")) {
         message.reply({embed: {
             color: 15924992,
@@ -375,6 +380,37 @@ bot.on('message', async message => {
             ],
         }
         }); 
+    }
+
+    if(message.content.startsWith("!chromechan task")){
+        message.reply({embed: {
+            color: 15924992,
+            author: {
+                name: "Ethan-Kun",
+            },
+            description: '(Dev note: Discord users will have status updated in the future. Once completed, your "personality" will alter how you interact with the bots and other users.)',
+            fields: [],
+        }
+        }); 
+        getRandomInt(4);
+        if (getRandomInt == 0) {
+            message.reply("0!")
+        } else if (getRandomInt == 1){
+            message.reply("1!")
+        } else if (getRandomInt == 3){
+            message.reply("3!")
+        } else if (getRandomInt == 4){
+            message.reply("4!")
+        } else {
+            message.reply({embed: {
+                color: 15924992,
+                author: {
+                    name: "Ethan-Kun",
+                },
+                description: 'Yeah, if you are seeing this. This is an error.',
+                fields: [],
+            }
+        });
     }
 
     if(message.content.startsWith("!chromechan open")){
