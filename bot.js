@@ -84,7 +84,7 @@ bot.on('message', async message => {
                 },
                 {
                     name: 'Duolingo-Chan!',
-                    value: 'Duolingo-Chan is very persistant in me learning Spaceanese. I have too afterall... She will take Moon-Kun from me... Use "!duolingochan help" to check out her command set!',
+                    value: 'Duolingo-Chan is very persistant for me to learn Spaceanese. I have too afterall... She will take Moon-Kun from me... Use "!duolingochan help" to check out her command set!',
                 },
                 {
                     name: 'And Finally... Me! Earth-Chan!',
@@ -153,7 +153,7 @@ bot.on('message', async message => {
                 },
                 {
                     name: '!lovekun mercedes',
-                    value: 'Ya know, who knows. Maybe destiny will find you two together.',
+                    value: 'Who knows. Maybe destiny will find you two together.',
                 },
                 {
                     name: '!lovekun marissa',
