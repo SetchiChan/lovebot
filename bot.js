@@ -382,6 +382,8 @@ bot.on('message', async message => {
         }); 
     }
 
+    var finalnumber = getRandomInt(4);
+
     if(message.content.startsWith("!chromechan task")){
         message.reply({embed: {
             color: 15924992,
@@ -392,14 +394,13 @@ bot.on('message', async message => {
             fields: [],
         }
         }); 
-        getRandomInt(4);
-        if (getRandomInt == 0) {
+        if (finalnumber == 0) {
             message.reply("0!")
-        } else if (getRandomInt == 1){
+        } else if (finalnumber == 1){
             message.reply("1!")
-        } else if (getRandomInt == 3){
+        } else if (finalnumber == 3){
             message.reply("3!")
-        } else if (getRandomInt == 4){
+        } else if (finalnumber == 4){
             message.reply("4!")
         } else {
             message.reply({embed: {
