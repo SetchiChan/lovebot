@@ -374,6 +374,10 @@ bot.on('message', async message => {
                     value: 'Lets eat up all that tasty ram you have there!',
                 },
                 {
+                    name: '!chromechan task [WIP]',
+                    value: 'You decide to do search on Chrome...',
+                },
+                {
                     name: 'MORE COMMANDS COMING SOON!',
                     value: '.',
                 },
