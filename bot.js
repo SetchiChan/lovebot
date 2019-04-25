@@ -72,7 +72,7 @@ bot.on('message', async message => {
                 name: "Earth-Chan",
                 icon_url: "https://vignette.wikia.nocookie.net/virtualyoutuber/images/f/f2/EarthChan.jpg/revision/latest?cb=20180527004331"
             },
-            description: 'Oh hey human! I see youre new here to this universe! Let me introduce you some of my friends!',
+            description: 'Oh hey human! I see youre new here to this universe! Let me introduce you to some of my friends!',
             fields: [
                 {
                     name: 'Love-Kun!',
