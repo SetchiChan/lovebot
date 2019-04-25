@@ -394,26 +394,82 @@ bot.on('message', async message => {
         }); 
 
         var finalnumber = getRandomInt(4);
-        
-        if (finalnumber == 0) {
-            message.reply("0!")
-        } else if (finalnumber == 1){
-            message.reply("1!")
-        } else if (finalnumber == 3){
-            message.reply("3!")
-        } else if (finalnumber == 4){
-            message.reply("4!")
-        } else {
+        var trueorfales = false;
+
+        if (trueorfales == false){
+            if (finalnumber == 0) {
+                trueorfales = true;
+                message.reply({embed: {
+                    color: 15924992,
+                    author: {
+                        name: "Chrome-Chan",
+                        icon_url: "https://i.imgur.com/yTGegZ7.png"
+                    },
+                    description: 'Lemme love you',
+                    image: {
+                        "url": "https://pics.me.me/lewded-pikachu-37517665.png"
+                      },
+                    fields: [],
+                }
+                }); 
+            } else if (finalnumber == 1){
+                trueorfales = true;
+                message.reply({embed: {
+                    color: 15924992,
+                    author: {
+                        name: "Chrome-Chan",
+                        icon_url: "https://i.imgur.com/yTGegZ7.png"
+                    },
+                    description: 'Its not loaded.',
+                    image: {
+                        "url": "https://pics.me.me/lewded-pikachu-37517665.png"
+                      },
+                    fields: [],
+                }
+                }); 
+            } else if (finalnumber == 3){
+                trueorfales = true;
+                message.reply({embed: {
+                    color: 15924992,
+                    author: {
+                        name: "Chrome-Chan",
+                        icon_url: "https://i.imgur.com/yTGegZ7.png"
+                    },
+                    description: 'Or Not',
+                    image: {
+                        "url": "https://pics.me.me/lewded-pikachu-37517665.png"
+                      },
+                    fields: [],
+                }
+                }); 
+            } else {
+                message.reply({embed: {
+                    color: 15924992,
+                    author: {
+                        name: "Ethan-Kun",
+                    },
+                    description: 'Yeah, if you are seeing this. This is an error.',
+                    fields: [],
+                }
+            });
+        }
+        } else if (trueorfales == true) {
             message.reply({embed: {
                 color: 15924992,
                 author: {
-                    name: "Ethan-Kun",
+                    name: "Chrome-Chan",
+                    icon_url: "https://i.imgur.com/yTGegZ7.png"
                 },
-                description: 'Yeah, if you are seeing this. This is an error.',
-                fields: [],
+                description: 'Oh sorry dearie, someone is using me.',
             }
-        });
+            }); 
+        }
     }
+
+    //reset
+    if(message.content.startsWith("!resetvar")){
+        trueorfales = false;
+        message.reply("reseted!");
     }
 
     if(message.content.startsWith("!chromechan open")){
