@@ -377,7 +377,7 @@ bot.on('message', async message => {
         }); 
     }
 
-    if(message.content.startsWith("!openchrome")){
+    if(message.content.startsWith("!chromechan open")){
         if (message.author.id == Ethan){
             message.channel.send({embed: {
                 author: {
