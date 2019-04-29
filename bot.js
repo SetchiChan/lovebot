@@ -64,6 +64,221 @@ bot.on('message', async message => {
             }
        })
     }
+
+    if(message.content.startsWith("!playerstats")){
+        if(message.author.id == Daniel){
+            message.reply({embed: {
+                color: 59431,
+                title: 'Daniels Status',
+                fields: [
+                    {
+                        name: 'Personality:',
+                        value: 'Neutral',
+                    },
+                    {
+                        name: 'Luck:',
+                        value: '1',
+                    },
+                    {
+                        name: 'Speechcraft:',
+                        value: '1',
+                    },
+                    {
+                        name: 'Inventory (Will not be used in this story ark)',
+                        value: 'none',
+                    },
+                    {
+                        name: 'Love-Kun!',
+                        value: ':heart: :black_heart: :black_heart: :black_heart: :black_heart: :black_heart: ',
+                    },
+                    {
+                        name: 'Chrome-Chan!',
+                        value: ':heart: :black_heart: :black_heart: :black_heart: :black_heart: :black_heart: ',
+                    },
+                    {
+                        name: 'Duolingo-Chan!',
+                        value: ':heart: :black_heart: :black_heart: :black_heart: :black_heart: :black_heart: ',
+                    },
+                    {
+                        name: 'Earth-Chan!',
+                        value: ':heart: :black_heart: :black_heart: :black_heart: :black_heart: :black_heart: ',
+                    },
+                ],
+            }
+            }); 
+        } else if (message.author.id == Ethan){
+            message.reply({embed: {
+                color: 59431,
+                title: 'Ethans Status',
+                fields: [
+                    {
+                        name: 'Personality:',
+                        value: 'God',
+                    },
+                    {
+                        name: 'Luck:',
+                        value: '99',
+                    },
+                    {
+                        name: 'Speechcraft:',
+                        value: '-1',
+                    },
+                    {
+                        name: 'Inventory (Will not be used in this story ark)',
+                        value: 'Olivias Special Lever',
+                    },
+                    {
+                        name: 'Love-Kun!',
+                        value: ':heart: :black_heart: :black_heart: :black_heart: :black_heart: :black_heart: ',
+                    },
+                    {
+                        name: 'Chrome-Chan!',
+                        value: ':heart: :heart: :heart: :heart: :heart:  ',
+                    },
+                    {
+                        name: 'Duolingo-Chan!',
+                        value: ':heart: :black_heart: :black_heart: :black_heart: :black_heart: :black_heart: ',
+                    },
+                    {
+                        name: 'Earth-Chan!',
+                        value: ':heart: :black_heart: :black_heart: :black_heart: :black_heart: :black_heart: ',
+                    },
+                ],
+            }
+            }); 
+        } else if (message.author.id == Marissa){
+            message.reply({embed: {
+                color: 59431,
+                title: 'Marissas Status',
+                fields: [
+                    {
+                        name: 'Personality:',
+                        value: 'Lewd',
+                    },
+                    {
+                        name: 'Luck:',
+                        value: '20',
+                    },
+                    {
+                        name: 'Speechcraft:',
+                        value: '5',
+                    },
+                    {
+                        name: 'Inventory (Will not be used in this story ark)',
+                        value: 'Olivias Special Lever',
+                    },
+                    {
+                        name: 'Love-Kun!',
+                        value: ':heart: :black_heart: :black_heart: :black_heart: :black_heart: :black_heart: ',
+                    },
+                    {
+                        name: 'Chrome-Chan!',
+                        value: ':heart: :black_heart: :black_heart: :black_heart: :black_heart: :black_heart:  ',
+                    },
+                    {
+                        name: 'Duolingo-Chan!',
+                        value: ':heart: :black_heart: :black_heart: :black_heart: :black_heart: :black_heart: ',
+                    },
+                    {
+                        name: 'Earth-Chan!',
+                        value: ':heart: :black_heart: :black_heart: :black_heart: :black_heart: :black_heart: ',
+                    },
+                ],
+            }
+            }); 
+        }else if(message.author.id == Dylan){
+            message.reply({embed: {
+                color: 59431,
+                title: 'Dylans Status',
+                fields: [
+                    {
+                        name: 'Personality:',
+                        value: 'Neutral',
+                    },
+                    {
+                        name: 'Luck:',
+                        value: '15',
+                    },
+                    {
+                        name: 'Speechcraft:',
+                        value: '1',
+                    },
+                    {
+                        name: 'Inventory (Will not be used in this story ark)',
+                        value: 'none',
+                    },
+                    {
+                        name: 'Love-Kun!',
+                        value: ':heart: :black_heart: :black_heart: :black_heart: :black_heart: :black_heart: ',
+                    },
+                    {
+                        name: 'Chrome-Chan!',
+                        value: ':heart: :black_heart: :black_heart: :black_heart: :black_heart: :black_heart: ',
+                    },
+                    {
+                        name: 'Duolingo-Chan!',
+                        value: ':heart: :black_heart: :black_heart: :black_heart: :black_heart: :black_heart: ',
+                    },
+                    {
+                        name: 'Earth-Chan!',
+                        value: ':heart: :black_heart: :black_heart: :black_heart: :black_heart: :black_heart: ',
+                    },
+                ],
+            }
+            }); 
+        }else if(message.author.id == Olivia){
+            message.reply({embed: {
+                color: 59431,
+                title: 'Olivias Status',
+                fields: [
+                    {
+                        name: 'Personality:',
+                        value: 'Evil',
+                    },
+                    {
+                        name: 'Luck:',
+                        value: '1',
+                    },
+                    {
+                        name: 'Speechcraft:',
+                        value: '1',
+                    },
+                    {
+                        name: 'Inventory (Will not be used in this story ark)',
+                        value: 'none',
+                    },
+                    {
+                        name: 'Love-Kun!',
+                        value: ':heart: :black_heart: :black_heart: :black_heart: :black_heart: :black_heart: ',
+                    },
+                    {
+                        name: 'Chrome-Chan!',
+                        value: ':heart: :black_heart: :black_heart: :black_heart: :black_heart: :black_heart: ',
+                    },
+                    {
+                        name: 'Duolingo-Chan!',
+                        value: ':heart: :black_heart: :black_heart: :black_heart: :black_heart: :black_heart: ',
+                    },
+                    {
+                        name: 'Earth-Chan!',
+                        value: ':heart: :black_heart: :black_heart: :black_heart: :black_heart: :black_heart: ',
+                    },
+                ],
+            }
+            }); 
+        } else {
+            message.reply({embed: {
+                author: {
+                    name: "Earth-Chan",
+                    icon_url: "https://vignette.wikia.nocookie.net/virtualyoutuber/images/f/f2/EarthChan.jpg/revision/latest?cb=20180527004331"
+                },
+                description: "Sorry... This is either an error or you're not part of the program. Please ping Ethan if you wanna join.",
+                color: 59431,
+                fields: []
+                }
+           })
+        }
+    }
     
     if(message.content.startsWith("!command")){
         message.reply({embed: {
