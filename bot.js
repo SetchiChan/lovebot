@@ -15,7 +15,7 @@ bot.on('message', async message => {
 
     const Ethan = '416429218960769026';
     const Mercedes = '196593261828243456';
-    const Daniel = '408822490022805504';
+    const Daniel = '340630936972689408';
     const Olivia = '408822490022805504';
     const Dylan = '494974507283513362';
     const Marissa ='268519886328692737';
