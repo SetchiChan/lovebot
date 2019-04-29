@@ -165,7 +165,7 @@ bot.on('message', async message => {
                     },
                     {
                         name: 'Inventory (Will not be used in this story ark)',
-                        value: 'Olivias Special Lever',
+                        value: 'Sushi Roll [This item cannot be thrown away]',
                     },
                     {
                         name: 'Love-Kun!',
@@ -306,8 +306,16 @@ bot.on('message', async message => {
                     value: 'Hey human! You live on me! Ill show you this universe and Ill try my best to guide you! Use "!earthchan help" to get my command list!',
                 },
                 {
-                    name: 'Oh yeah, some general commands too!',
-                    value: '"!command" shows available bot commands. "!status" shows the current status of all the bots here!',
+                    name: '!command',
+                    value: 'Used to view all available commands.',
+                },
+                {
+                    name: '!stats',
+                    value: 'Views the current condition of characters.',
+                },
+                {
+                    name: '!playerstats',
+                    value: 'Views your current status.',
                 },
                 {
                     name: '(PLEASE TYPE ALL COMMANDS IN LOWERCASE FORM SO IT WILL WORK)',
