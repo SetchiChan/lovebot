@@ -20,7 +20,7 @@ bot.on('message', async message => {
     const Dylan = '494974507283513362';
     const Marissa ='268519886328692737';
 
-    if(message.content.startsWith("!status")){
+    if(message.content.startsWith("?status")){
         message.channel.send({embed: {
             color: 0x0099ff,
             title: 'Status of All Characters',
@@ -65,7 +65,7 @@ bot.on('message', async message => {
        })
     }
 
-    if(message.content.startsWith("!playerstats")){
+    if(message.content.startsWith("?playerstats")){
         if(message.author.id == Daniel){
             message.reply({embed: {
                 color: 59431,
@@ -280,7 +280,7 @@ bot.on('message', async message => {
         }
     }
     
-    if(message.content.startsWith("!command")){
+    if(message.content.startsWith("?commandlist")){
         message.reply({embed: {
             color: 59431,
             author: {
@@ -291,30 +291,30 @@ bot.on('message', async message => {
             fields: [
                 {
                     name: 'Love-Kun!',
-                    value: 'He is pretty weird. He tends to be very perverted at times. Baka baka. Anyways, you can check out his command set by doing "!lovekun help"',
+                    value: 'He is pretty weird. He tends to be very perverted at times. Baka baka. Anyways, you can check out his command set by doing "?lovekun help"',
                 },
                 {
                     name: 'Chrome-Chan!',
-                    value: 'Chrome-Chan is very smart. She knows like almost everything. She does... seem pretty mean at times... but you might get to like her. Use "!chromechan help" for her command set.',
+                    value: 'Chrome-Chan is very smart. She knows like almost everything. She does... seem pretty mean at times... but you might get to like her. Use "?chromechan help" for her command set.',
                 },
                 {
                     name: 'Duolingo-Chan!',
-                    value: 'Duolingo-Chan is very persistant for me to learn Spaceanese. I have too afterall... She will take Moon-Kun from me... Use "!duolingochan help" to check out her command set!',
+                    value: 'Duolingo-Chan is very persistant for me to learn Spaceanese. I have too afterall... She will take Moon-Kun from me... Use "?duolingochan help" to check out her command set!',
                 },
                 {
                     name: 'And Finally... Me! Earth-Chan!',
-                    value: 'Hey human! You live on me! Ill show you this universe and Ill try my best to guide you! Use "!earthchan help" to get my command list!',
+                    value: 'Hey human! You live on me! Ill show you this universe and Ill try my best to guide you! Use "?earthchan help" to get my command list!',
                 },
                 {
-                    name: '!command',
+                    name: '?commandlist',
                     value: 'Used to view all available commands.',
                 },
                 {
-                    name: '!stats',
+                    name: '?stats',
                     value: 'Views the current condition of characters.',
                 },
                 {
-                    name: '!playerstats',
+                    name: '?playerstats',
                     value: 'Views your current status.',
                 },
                 {
@@ -326,7 +326,7 @@ bot.on('message', async message => {
         }); 
     }
 
-    if (message.content.startsWith("!earthchan help")) {
+    if (message.content.startsWith("?earthchan help")) {
         message.reply({embed: {
             color: 59431,
             author: {
@@ -336,7 +336,7 @@ bot.on('message', async message => {
             description: 'Hey I see you want to explore this world! Here are my commands!',
             fields: [
                 {
-                    name: '!flirt earthchan [BROKEN/WIP]',
+                    name: '?flirt earthchan [BROKEN/WIP]',
                     value: 'But Im a planet human... I dont think you can do that...',
                 },
                 {
@@ -349,7 +349,7 @@ bot.on('message', async message => {
     }
 
     //Love-Chan
-    if (message.content.startsWith("!lovekun help")) {
+    if (message.content.startsWith("?lovekun help")) {
         message.reply({embed: {
             color: 15077906,
             author: {
@@ -359,31 +359,31 @@ bot.on('message', async message => {
             description: 'Hey there you naughty. Here are my commands~ UwU <3',
             fields: [
                 {
-                    name: '!lovekun ship',
+                    name: '?lovekun ship',
                     value: 'Ships 2 lucky users on the discord...',
                 },
                 {
-                    name: '!lovekun marriage',
+                    name: '?lovekun marriage',
                     value: 'Ships 2 lucky users on the discord...',
                 },
                 {
-                    name: '!lovekun kink [BROKEN/WIP]',
+                    name: '?lovekun kink [BROKEN/WIP]',
                     value: 'The comand explains itself love~',
                 },
                 {
-                    name: '!lovekun ethan',
+                    name: '?lovekun ethan',
                     value: 'Ships with nobody. again. He dosent deserve love.',
                 },
                 {
-                    name: '!lovekun mercedes',
+                    name: '?lovekun mercedes',
                     value: 'Who knows. Maybe destiny will find you two together.',
                 },
                 {
-                    name: '!lovekun marissa',
+                    name: '?lovekun marissa',
                     value: 'Should I say more?',
                 },
                 {
-                    name: '!lovekun daniel',
+                    name: '?lovekun daniel',
                     value: 'Hes lucky that I even put him here.',
                 },
                 {
@@ -395,7 +395,7 @@ bot.on('message', async message => {
         }); 
     }
 
-    if(message.content.startsWith("!lovekun ship")){
+    if(message.content.startsWith("?lovekun ship")){
         message.channel.send({embed: {
             author: {
                 name: "Love-Kun",
@@ -408,7 +408,7 @@ bot.on('message', async message => {
        })
     }
 
-    if(message.content.startsWith("!lovekun marriage")){
+    if(message.content.startsWith("?lovekun marriage")){
         message.channel.send({embed: {
             author: {
                 name: "Love-Kun",
@@ -421,7 +421,7 @@ bot.on('message', async message => {
        })
     }
 
-    if(message.content.startsWith("!lovekun ethan")){
+    if(message.content.startsWith("?lovekun ethan")){
         message.channel.send({embed: {
             author: {
                 name: "Love-Kun",
@@ -434,7 +434,7 @@ bot.on('message', async message => {
        })
     }
 
-    if(message.content.startsWith("!lovekun mercedes")){
+    if(message.content.startsWith("?lovekun mercedes")){
         message.channel.send({embed: {
             author: {
                 name: "Love-Kun",
@@ -447,7 +447,7 @@ bot.on('message', async message => {
        })
     }
 
-    if(message.content.startsWith("!lovekun marissa")){
+    if(message.content.startsWith("?lovekun marissa")){
         message.channel.send({embed: {
             author: {
                 name: "Love-Kun",
@@ -460,7 +460,7 @@ bot.on('message', async message => {
        })
     }
 
-    if(message.content.startsWith("!lovekun daniel")){
+    if(message.content.startsWith("?lovekun daniel")){
         message.channel.send({embed: {
             author: {
                 name: "Love-Kun",
@@ -474,7 +474,7 @@ bot.on('message', async message => {
     }
 
     //Duolingo-Chan Stuff
-    if (message.content.startsWith("!duolingochan help")) {
+    if (message.content.startsWith("?duolingochan help")) {
         message.reply({embed: {
             color: 9043806,
             author: {
@@ -484,7 +484,7 @@ bot.on('message', async message => {
             description: 'Ruega por tu vida en Español',
             fields: [
                 {
-                    name: '!duolingochan open [WIP]',
+                    name: '?duolingochan open [WIP]',
                     value: 'Time for your spanish lessons...',
                 },
                 {
@@ -496,7 +496,7 @@ bot.on('message', async message => {
         }); 
     }
 
-    if(message.content.startsWith("!duolingochan open")){
+    if(message.content.startsWith("?duolingochan open")){
         if (message.author.id == Ethan){
             message.channel.send({embed: {
                 author: {
@@ -583,7 +583,7 @@ bot.on('message', async message => {
         return Math.floor(Math.random() * Math.floor(max));
     }
 
-    if (message.content.startsWith("!chromechan help")) {
+    if (message.content.startsWith("?chromechan help")) {
         message.reply({embed: {
             color: 15924992,
             author: {
@@ -593,11 +593,11 @@ bot.on('message', async message => {
             description: 'Lemme eat your ram.',
             fields: [
                 {
-                    name: '!chromechan open [WIP]',
+                    name: '?chromechan open [WIP]',
                     value: 'Lets eat up all that tasty ram you have there!',
                 },
                 {
-                    name: '!chromechan task [WIP]',
+                    name: '?chromechan task [WIP]',
                     value: 'You decide to do search on Chrome...',
                 },
                 {
@@ -609,7 +609,7 @@ bot.on('message', async message => {
         }); 
     }
 
-    if(message.content.startsWith("!chromechan task")){
+    if(message.content.startsWith("?chromechan task")){
         message.reply({embed: {
             color: 15924992,
             author: {
@@ -679,14 +679,7 @@ bot.on('message', async message => {
         }
     }
 
-
-    //reset
-    if(message.content.startsWith("!resetvar")){
-        trueorfales = false;
-        message.reply("reseted!");
-    }
-
-    if(message.content.startsWith("!chromechan open")){
+    if(message.content.startsWith("?chromechan open")){
         if (message.author.id == Ethan){
             message.channel.send({embed: {
                 author: {
@@ -729,7 +722,7 @@ bot.on('message', async message => {
 });     
 
 bot.on('ready', () => {
-    bot.user.setGame('Welcome to the internet!')
+    bot.user.setGame('do "?commandlist" for commands! Welcome to the universe!')
 })
 
 
