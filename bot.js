@@ -51,6 +51,81 @@ bot.on('message', async message => {
         });     
     }
 
+    if(message.content.startsWith("?balance")){
+        if(message.author.id == Daniel){
+            message.reply({embed: {
+                color: 59431,
+                title: 'Daniels Balance',
+                fields: [
+                    {
+                        name: 'Balance:',
+                        value: '0',
+                    },
+                ],
+            }
+            }); 
+        } else if (message.author.id == Ethan){
+            message.reply({embed: {
+                color: 59431,
+                title: 'Ethans Balance',
+                fields: [
+                    {
+                        name: 'Balance:',
+                        value: '99999',
+                    },
+                ],
+            }
+            }); 
+        } else if (message.author.id == Marissa){
+            message.reply({embed: {
+                color: 59431,
+                title: 'Marissas Balance',
+                fields: [
+                    {
+                        name: 'Balance:',
+                        value: '1000',
+                    },
+                ],
+            }
+            }); 
+        }else if(message.author.id == Dylan){
+            message.reply({embed: {
+                color: 59431,
+                title: 'Dylans Balance',
+                fields: [
+                    {
+                        name: 'Balance:',
+                        value: '1000',
+                    },
+                ],
+            }
+            }); 
+        }else if(message.author.id == Olivia){
+            message.reply({embed: {
+                color: 59431,
+                title: 'Olivias Balance',
+                fields: [
+                    {
+                        name: 'Balance:',
+                        value: '1000',
+                    },
+                ],
+            }
+            }); 
+        } else {
+            message.reply({embed: {
+                author: {
+                    name: "Earth-Chan",
+                    icon_url: "https://vignette.wikia.nocookie.net/virtualyoutuber/images/f/f2/EarthChan.jpg/revision/latest?cb=20180527004331"
+                },
+                description: "Sorry... This is either an error or you're not part of the program. Please ping Ethan if you wanna join.",
+                color: 59431,
+                fields: []
+                }
+           })
+        }
+    }
+
     if(message.content.startsWith("?guide")){
         message.channel.send({embed: {
             color: 0x0099ff,
