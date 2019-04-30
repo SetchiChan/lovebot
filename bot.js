@@ -50,6 +50,41 @@ bot.on('message', async message => {
         }
         });     
     }
+
+    if(message.content.startsWith("?guide")){
+        message.channel.send({embed: {
+            color: 0x0099ff,
+            author: {
+                name: "Earth-Chan",
+                icon_url: "https://vignette.wikia.nocookie.net/virtualyoutuber/images/f/f2/EarthChan.jpg/revision/latest?cb=20180527004331"
+            },
+            title: 'Guide',
+            description: 'Hey human! So if you need help with the heck this is, you can read this.',
+            fields: [
+                {
+                    name: 'Characters',
+                    value: 'All characters here are somewhat viable as a partner. They all play their roles (ex: Love-kun is for giving love.) and you are able to grow your relationship with them. Your relationship is indicated by hearts.',
+                },
+                {
+                    name: 'Story',
+                    value: 'You are currently in the 1st arc. The story progresses for all partcipants and affects future events. These events can lead to the possible death or change in a bot.',
+                },
+                {
+                    name: 'Personality',
+                    value: 'Personality is based of how you treat the characters in this story. Personalites are: Netural, Kind, Mean, Lewd, Insane, Depressed, Disgrace. These affect how bots converse with you.',
+                },
+                {
+                    name: 'Luck',
+                    value: 'Luck is used to trigger random dialogue when talking with characters. Can be increased by certain events or items.',
+                },
+                {
+                    name: 'Speechcraft',
+                    value: 'Speechcraft can be used to convince characters when you are given a choice. The higher your speechcraft, the higher the chance you can access an option. Can be increased by talking to certain characters.',
+                },
+            ],
+        }
+        });     
+    }
     
     //Earth-Chan
     if (message.isMentioned(bot.user)) {
