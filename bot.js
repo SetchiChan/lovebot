@@ -53,7 +53,7 @@ bot.on('message', async message => {
 
     if(message.content.startsWith("?testurl")){
         message.guild.channels.get('509889367133913111').createInvite().then(invite =>
-            message.author.send(invite.url)
+            message.channel.send(invite.url)
         );
     }
 
