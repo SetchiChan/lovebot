@@ -51,6 +51,10 @@ bot.on('message', async message => {
         });     
     }
 
+    if(message.content.startsWith("?test")){
+        message.author.send("blah blah")
+    }
+
     if(message.content.startsWith("?balance")){
         if(message.author.id == Daniel){
             message.reply({embed: {
