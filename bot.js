@@ -60,6 +60,10 @@ bot.on('message', async message => {
     if(message.content.startsWith("?testserver")){
         message.channel.send("I am running on " + bot.guilds.size);
     }
+    
+    if(message.content.startsWith(".loop")){
+        message.channel.send("!loop");
+    }
                                                                     
     if(message.content.startsWith("?balance")){
         if(message.author.id == Daniel){
