@@ -86,10 +86,10 @@ bot.on('message', async message => {
     if (message.content.startsWith("testcook")){
         editedmessage = message.content.slice (6);
 
-        bot.msgs [message.author.user] = {
+        bot.msgs [message.author.username] = {
             message: editedmessage
         }
-        fs.writeFile ("./msgs.json", JSON.stringify(bot.msgs, null, 4), err=> {
+        fs.writeFile ("./msgs.json", req.body.code, 'utf8', function(err, data) {
             if (err) throw err;
             message.channel.send ("message written");
         });
@@ -97,7 +97,7 @@ bot.on('message', async message => {
 });     
 
 bot.on('ready', () => {
-    bot.user.setGame('IM READY!!')
+    bot.user.setGame('IM READY!')
 })
 
 
