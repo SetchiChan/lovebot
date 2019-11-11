@@ -89,7 +89,7 @@ bot.on('message', async message => {
         bot.msgs [message.author.user] = {
             message: editedmessage
         }
-        fs.writeFile("./msgs.json", JSON.stringify(points), (err) => {
+        fs.writeFile ("./msgs.json", JSON.stringify(bot.msgs, null, 4), err=> {
             if (err) throw err;
             message.channel.send ("message written");
         });
@@ -97,7 +97,7 @@ bot.on('message', async message => {
 });     
 
 bot.on('ready', () => {
-    bot.user.setGame('IM ')
+    bot.user.setGame('IM READY!!')
 })
 
 
