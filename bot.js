@@ -1,13 +1,25 @@
 const Discord = require('discord.js');
 const bot = new Discord.Client();
+const Storage = require('discord-storage').Storage;
 
 const newUser = [];
 
 const PREFIX = "'";
 const TOKEN = "x";
 
-const fs = require("fs");
-bot.msgs = require("./msgs.json");
+bot.once('ready', () => {
+	bot.storage = new Storage(bot, '537127370423926844');
+	bot.storage.sync().then(() => {
+		bot.channel.get('537127370423926844').send("AHHH?");
+	});
+});
+
+bot.on('ready', bot => {
+    con.connect(err => {
+        if(err) throw err;
+        bot.channels.get('').send(err);
+    });
+})
 
 bot.on('message', async message => {
     const randomMember = message.guild.members.random();
@@ -83,7 +95,7 @@ bot.on('message', async message => {
         });     
     }
 
-    if (message.content.startsWith("testcook")){
+    if (message.content.startsWith("sssstestcook")){
         editedmessage = message.content.slice (6);
 
         bot.msgs [message.author.user] = {
@@ -97,7 +109,7 @@ bot.on('message', async message => {
 });     
 
 bot.on('ready', () => {
-    bot.user.setGame('IM READY!!')
+    bot.user.setGame('IM READY!!!')
 })
 
 
