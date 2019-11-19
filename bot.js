@@ -7,11 +7,15 @@ const PREFIX = "'";
 const TOKEN = "x";
 
 bot.on('message', async message => {
-  
+
+    if (message.content.startsWith("tacobell")) {
+        message.channel.send('Yes?');
+    }    
+
 });     
 
 bot.on('ready', () => {
-    bot.user.setGame('yes?')
+    bot.user.setGame('do "?hot')
 })
 
 
