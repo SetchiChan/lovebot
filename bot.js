@@ -12,10 +12,17 @@ bot.on('message', async message => {
         message.channel.send('Yes?');
     }    
 
-});     
+});    
+
+bot.once('ready', () => {
+	bot.storage = new Storage(bot, '537127370423926844');
+	bot.storage.sync().then(() => {
+		message.channel.send("Hello");
+	});
+});
 
 bot.on('ready', () => {
-    bot.user.setGame('do "?hot')
+    bot.user.setGame('do "?commandlist" for commands! Welcome to the universe!')
 })
 
 
