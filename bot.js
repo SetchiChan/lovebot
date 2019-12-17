@@ -71,6 +71,16 @@ bot.on('message', async message => {
         } 
         //message.channel.send(d.toLocaleTimeString());
     }
+
+    if (message.content.startsWith("?test")){
+        let target = message.mentions.first() || message.guild.memebers.get(args[1]) || message.author;
+
+        con.query(`SELECT * FROM xp WHERE id = '${target.id}'`, (err, rows) => {
+
+            let xp = rows[0].xp;
+            message.channel.send(xp);
+        });
+    }
 });   
 
 bot.on('ready', () => {
