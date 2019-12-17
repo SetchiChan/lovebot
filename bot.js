@@ -13,7 +13,6 @@ var con = mysql.createConnection({
 con.connect(err => {
     if(err) throw err;
     console.log("Connected to database.");
-    con.query("SHOW TABLES",console.log);
 });
 
 function generateCookie(){
@@ -32,8 +31,9 @@ bot.on('message', async message => {
             sql = `INSERT INTO xp (id,xp) VALUES ('${message.author.id}', ${generateCookie()})`;
         } else {
             let xp = rows[0].xp;
+            sql = `UPDATE xp SET xp = ${xp + generateCookie()} WHERE id = '${message.author.id}'`;
         }
-        sql = `UPDATE xp SET xp = ${xp + generateCookie()} WHERE id = '${message.author.id}'`;
+
         con.query(sql, console.log)
     });
 
