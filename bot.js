@@ -19,7 +19,17 @@ con.connect(err => {
     con.query("SHOW TABLES",console.log);
 });
 
+function generateCookie(){
+    return Math.floor(Math.random() * (30-20 + 1)) + 20;
+}
+
 bot.on('message', async message => {
+
+    con.query(`SELECT * FROM id ='${message.author.id}'`, (err, rows) => {
+        if (err) throw err;
+        console.log(rows);
+    })
+
     if (message.content.startsWith("write")){
         
     }
