@@ -6,7 +6,7 @@ const mysql = require("mysql");
 var con = mysql.createConnection({
     host: "sql9.freemysqlhosting.net",
     user: "	sql9316027",
-    password: process.env.SQL_PASSWORD,
+    password: "bmLPP5bgfb",
     database: "sql9316027"
 });
 
@@ -17,8 +17,8 @@ function sendMessage(){
 }
 con.connect(err => {
     if(err) throw err;
-    console.log("Connected to database.")
-
+    sendMessage();
+    console.log("Connected to database.");
 })
 
 bot.on('message', async message => {
