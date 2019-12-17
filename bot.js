@@ -39,6 +39,18 @@ bot.on('message', async message => {
 
     if (message.content.startsWith("write")){
         var d = new Date();
+        var currentDate = d.toLocaleTimeString()
+        var chars = currentDate.split(" ").join("/").split("/");
+        let total;
+        //EXPECTED (8:04:41 AM)
+        if (chars[3] == "AM"){
+            //
+        } 
+        else if (chars[3] == "PM")
+        {
+            total = (chars[0] * 3600) + (chars[1] * 60) + chars[2]
+            message.channel.send(total);
+        }
         message.channel.send(d.toLocaleTimeString());
     }
 });   
