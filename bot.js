@@ -44,7 +44,7 @@ bot.on('message', async message => {
         let total;
         //EXPECTED (8:04:41 AM)
         if (chars[3] == "AM"){
-            total = (chars[0] * 3600) + (chars[1] * 60) + chars[2];
+            total = (((chars[0] * 3600) + (chars[1] * 60)) + chars[2]);
             message.channel.send(chars[0] * 3600);
             message.channel.send(chars[1] * 60);
             message.channel.send(chars[2]);
