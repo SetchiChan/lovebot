@@ -61,7 +61,7 @@ bot.on('message', async message => {
             let xp = rows[0].xp;
 
             if (currentTime-xp < 7200){
-                var sec_num = parseInt(xp-currentTime, 10); // don't forget the second param
+                var sec_num = parseInt(currentTime-xp, 10); // don't forget the second param
                 var hours   = Math.floor(sec_num / 3600);
                 var minutes = Math.floor((sec_num - (hours * 3600)) / 60);
                 var seconds = sec_num - (hours * 3600) - (minutes * 60);
@@ -70,7 +70,7 @@ bot.on('message', async message => {
                 if (minutes < 10) {minutes = "0"+minutes;}
                 if (seconds < 10) {seconds = "0"+seconds;}
 
-                message.channel.send("Sorry, you have " + hours+':'+minutes+':'+seconds + " remaining until you can roll.");
+                message.channel.send("Sorry, you have " + hours+':'+minutes+':'+seconds + " remaining until you can roll. " + currentTime + ":" + xp);
             } else {
                 message.channel.send("UwU, you can roll. It is " + currentDate + " or " + currentTime);
                     if (err) throw err;
