@@ -1,23 +1,14 @@
 {
-  "name": "discord-storage",
-  "version": "0.1.1",
-  "description": "Stores data in a specified discord channel that your client has access to",
-  "main": "bin/bot.js",
+  "name": "lovebot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "bot.js",
   "scripts": {
-    "package": "gulp clean-package && gulp package",
     "start": "node bot.js"
   },
-  "author": "SETCHI",
-  "license": "MIT",
-  "devDependencies": {
-    "@types/node": "^6.0.58",
-    "del": "^2.2.2",
-    "gulp": "^3.9.1",
-    "gulp-typescript": "^3.1.4",
-    "tslint": "^4.3.1",
-    "typescript": "^2.1.4"
-  },
+  "author": "",
+  "license": "ISC",
   "dependencies": {
-    "discord.js": "^11.0.0"
+    "discord.js": "^11.4.2"
   }
 }
