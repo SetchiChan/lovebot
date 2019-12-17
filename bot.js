@@ -56,11 +56,9 @@ bot.on('message', async message => {
 
         con.query(`SELECT * FROM xp WHERE id = '${message.author.id}'`, (err, rows) => {
 
-            if(!rows[0]) return message.channel.send("An Error has occured. Please try the command again in a few seconds.");
-
             let xp = rows[0].xp;
 
-            var timeDiff = (7200 - (currentTime-xp-9000));
+            var timeDiff = (7200 - (currentTime-xp));
 
             if (timeDiff < 7200){
                 var sec_num = parseInt(timeDiff, 10); // don't forget the second param
@@ -90,7 +88,6 @@ bot.on('message', async message => {
                     if (rows.length < 1){
                         sql = `INSERT INTO xp (id,xp) VALUES ('${message.author.id}', ${currentTime})`;
                     } else {
-                        //let xp = rows[0].xp;
                         sql = `UPDATE xp SET xp = ${currentTime} WHERE id = '${message.author.id}'`;
                     }
             
@@ -105,7 +102,7 @@ bot.on('message', async message => {
                                 name: "The boxed Cookie Trader!",
                                 icon_url: "https://66.media.tumblr.com/cc15193e1eade70634202626f5a4d590/tumblr_p1fltrOC6F1ua0iw3o1_640.png"
                             },
-                            description: "CONGRATULATIONS!, you got yourself a free cookie. Litearlly dm Ethan with proof m8.",
+                            description: "CONGRATULATIONS!, you got yourself a free cookie. Dm ethan or just ping him for your free snack. Butt.",
                             color: 15158332,
                             fields: []
                             }
@@ -122,6 +119,47 @@ bot.on('message', async message => {
                             }
                        })
                     }
+            }
+
+            if(!rows[0]){
+                if (err) throw err;
+                    
+                let sql;
+            
+                if (rows.length < 1){
+                    sql = `INSERT INTO xp (id,xp) VALUES ('${message.author.id}', ${currentTime})`;
+                } else {
+                    sql = `UPDATE xp SET xp = ${currentTime} WHERE id = '${message.author.id}'`;
+                }
+            
+                con.query(sql);
+
+                var diceRoll = Math.floor(Math.random() * Math.floor(6)) + 1;
+                var computerRoll = Math.floor(Math.random() * Math.floor(6)) + 1;
+
+                if (computerRoll == diceRoll){
+                    message.channel.send({embed: {
+                        author: {
+                            name: "The boxed Cookie Trader!",
+                            icon_url: "https://66.media.tumblr.com/cc15193e1eade70634202626f5a4d590/tumblr_p1fltrOC6F1ua0iw3o1_640.png"
+                        },
+                        description: "CONGRATULATIONS!, you got yourself a free cookie. Dm ethan or just ping him for your free snack. Butt.",
+                        color: 15158332,
+                        fields: []
+                        }
+                    })
+                } else {
+                    message.channel.send({embed: {
+                        author: {
+                            name: "The boxed Cookie Trader!",
+                            icon_url: "https://66.media.tumblr.com/cc15193e1eade70634202626f5a4d590/tumblr_p1fltrOC6F1ua0iw3o1_640.png"
+                        },
+                        description: "Darn, you didn't get it! Try agian in 2 hours! You got a " + diceRoll + " and the bot got a " + computerRoll,
+                        color: 15158332,
+                        fields: []
+                        }
+                    })
+                }
             }
         });
     }
