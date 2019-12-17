@@ -23,7 +23,7 @@ bot.on('message', async message => {
 });     
 
 bot.on('ready', () => {
-    bot.user.setGame('WIP?')
+    bot.user.setGame('WIP? crash?')
 })
 
 
