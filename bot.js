@@ -96,16 +96,32 @@ bot.on('message', async message => {
             
                     con.query(sql);
 
-                    message.channel.send({embed: {
-                        author: {
-                            name: "The boxed Cookie Trader!",
-                            icon_url: "https://66.media.tumblr.com/cc15193e1eade70634202626f5a4d590/tumblr_p1fltrOC6F1ua0iw3o1_640.png"
-                        },
-                        description: "It's time to roll! You got a " + Math.random(1, 20),
-                        color: 15158332,
-                        fields: []
-                        }
-                   })
+                    var diceRoll = math.randomInt(1, 6);
+                    var computerRoll = math.randomInt(1, 6);
+
+                    if (computerRoll == diceRoll){
+                        message.channel.send({embed: {
+                            author: {
+                                name: "The boxed Cookie Trader!",
+                                icon_url: "https://66.media.tumblr.com/cc15193e1eade70634202626f5a4d590/tumblr_p1fltrOC6F1ua0iw3o1_640.png"
+                            },
+                            description: "CONGRATULATIONS!, you got yourself a free cookie. Litearlly dm Ethan with proof m8.",
+                            color: 15158332,
+                            fields: []
+                            }
+                       })
+                    } else {
+                        message.channel.send({embed: {
+                            author: {
+                                name: "The boxed Cookie Trader!",
+                                icon_url: "https://66.media.tumblr.com/cc15193e1eade70634202626f5a4d590/tumblr_p1fltrOC6F1ua0iw3o1_640.png"
+                            },
+                            description: "Darn, you didn't get it! Try agian in 2 hours! You got a " + diceRoll + " and the bot got a " + computerRoll,
+                            color: 15158332,
+                            fields: []
+                            }
+                       })
+                    }
             }
         });
     }
