@@ -34,53 +34,35 @@ String.prototype.toHHMMSS = function () {
 bot.on('message', async message => {
     if(message.author.bot) return;
 
-    con.query(`SELECT * FROM xp WHERE id = '${message.author.id}'`, (err, rows) => {
-        if (err) throw err;
-        
-        let sql;
-
-        if (rows.length < 1){
-            sql = `INSERT INTO xp (id,xp) VALUES ('${message.author.id}', ${generateCookie()})`;
-        } else {
-            let xp = rows[0].xp;
-            sql = `UPDATE xp SET xp = ${xp + generateCookie()} WHERE id = '${message.author.id}'`;
-        }
-
-        con.query(sql)
-    });
-
-    if (message.content.startsWith("?cookie Roll")){
-        var d = new Date();
-        var currentDate = d.toLocaleTimeString();
-        var chars = currentDate.split(" ").join(":").split(":");
-        var currentTime = ((parseInt(chars[0], 10) * 2) * 3600) + (parseInt(chars[1], 10) * 60) + parseInt(chars[2], 10);
-        let thetotal;
-
-        if (chars[3] == "AM"){
-            thetotal = (parseInt(chars[0], 10) * 3600) + (parseInt(chars[1], 10) * 60) + parseInt(chars[2], 10);
-        } 
-        else if (chars[3] == "PM")
-        {
-            thetotal = ((parseInt(chars[0], 10) * 2) * 3600) + (parseInt(chars[1], 10) * 60) + parseInt(chars[2], 10);
-        }
-        //message.channel.send(d.toLocaleTimeString());
+    if(message.content.startsWith("?cookie")){
+        message.channel.send({embed: {
+            author: {
+                name: "The boxed Cookie Trader!",
+                icon_url: "https://66.media.tumblr.com/cc15193e1eade70634202626f5a4d590/tumblr_p1fltrOC6F1ua0iw3o1_640.png"
+            },
+            description: "Hello there! Feeling lucky and hungry? Well, use the command '?cookie roll' to roll! You might win a cookie.",
+            color: 15158332,
+            fields: []
+            }
+       })
     }
 
-    if (message.content.startsWith("?test")){
-        let target = message.mentions.users.first() || message.guild.memebers.get(args[1]) || message.author;
-
-        con.query(`SELECT * FROM xp WHERE id = '${target.id}'`, (err, rows) => {
-
-            if(!rows[0]) return message.channel.send("This person has no xp on record.");
-
-            let xp = rows[0].xp;
-            message.channel.send(xp);
-        });
+    if(message.content.startsWith("?cookie roll")){
+        message.channel.send({embed: {
+            author: {
+                name: "The boxed Cookie Trader!",
+                icon_url: "https://66.media.tumblr.com/cc15193e1eade70634202626f5a4d590/tumblr_p1fltrOC6F1ua0iw3o1_640.png"
+            },
+            description: "Sorry, this command isn't available to you yet! Estimated time until availability: null",
+            color: 15158332,
+            fields: []
+            }
+       })
     }
 });   
 
 bot.on('ready', () => {
-    bot.user.setGame('TEsting stuff')
+    bot.user.setGame('Feeling jolly!')
 });
 
 
