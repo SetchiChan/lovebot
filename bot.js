@@ -19,7 +19,7 @@ con.connect(err => {
     if(err) throw err;
     sendMessage();
     console.log("Connected to database.");
-})
+});
 
 bot.on('message', async message => {
     if (message.content.startsWith("write")){
