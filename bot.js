@@ -200,7 +200,7 @@ bot.on('message', async message => {
                                 name: "The boxed Cookie Trader!",
                                 icon_url: "https://66.media.tumblr.com/cc15193e1eade70634202626f5a4d590/tumblr_p1fltrOC6F1ua0iw3o1_640.png"
                             },
-                            description: "Sorry, you have " + hours+':'+minutes+':'+seconds + " remaining until you can roll again." + timeDiff + " = " + currentTime + " - " + xp,
+                            description: "Sorry, you have " + hours+':'+minutes+':'+seconds + " remaining until you can roll again.",
                             color: 15158332,
                             fields: []
                             }
