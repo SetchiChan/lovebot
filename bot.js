@@ -19,6 +19,18 @@ function generateCookie(){
     return Math.floor(Math.random() * (30-20 + 1)) + 20;
 }
 
+String.prototype.toHHMMSS = function () {
+    var sec_num = parseInt(this, 10); // don't forget the second param
+    var hours   = Math.floor(sec_num / 3600);
+    var minutes = Math.floor((sec_num - (hours * 3600)) / 60);
+    var seconds = sec_num - (hours * 3600) - (minutes * 60);
+
+    if (hours   < 10) {hours   = "0"+hours;}
+    if (minutes < 10) {minutes = "0"+minutes;}
+    if (seconds < 10) {seconds = "0"+seconds;}
+    return hours+':'+minutes+':'+seconds;
+}
+
 bot.on('message', async message => {
     if(message.author.bot) return;
 
@@ -37,28 +49,27 @@ bot.on('message', async message => {
         con.query(sql)
     });
 
-    if (message.content.startsWith("write")){
+    if (message.content.startsWith("?cookie Roll")){
         var d = new Date();
-        var currentDate = d.toLocaleTimeString()
+        var currentDate = d.toLocaleTimeString();
         var chars = currentDate.split(" ").join(":").split(":");
-        let total;
-        //EXPECTED (8:04:41 AM)
+        var currentTime = ((parseInt(chars[0], 10) * 2) * 3600) + (parseInt(chars[1], 10) * 60) + parseInt(chars[2], 10);
+        let thetotal;
+
         if (chars[3] == "AM"){
-            total = ((parseInt(chars[0], 10) * 2) * 3600) + (parseInt(chars[1], 10) * 60) + parseInt(chars[2], 10)
-            message.channel.send(chars[0] * 2 * 3600);
-            message.channel.send(chars[1] * 60);
-            message.channel.send(chars[2]);
-            message.channel.send(total);
+            thetotal = (parseInt(chars[0], 10) * 3600) + (parseInt(chars[1], 10) * 60) + parseInt(chars[2], 10);
         } 
         else if (chars[3] == "PM")
         {
-            total = (parseInt(chars[0], 10) * 3600) + (parseInt(chars[1], 10) * 60) + parseInt(chars[2], 10)
-            message.channel.send(chars[0] * 3600);
-            message.channel.send(chars[1] * 60);
-            message.channel.send(chars[2]);
-            message.channel.send(total);
+            thetotal = ((parseInt(chars[0], 10) * 2) * 3600) + (parseInt(chars[1], 10) * 60) + parseInt(chars[2], 10);
         }
-        message.channel.send(d.toLocaleTimeString());
+
+        if (3 == 3){
+            message.channel.send(thetotal);
+            message.channel.send(currentTime);
+            message.channel.send("Sorry, you still have" + (currentTime - 30460).toHHMMSS());
+        } 
+        //message.channel.send(d.toLocaleTimeString());
     }
 });   
 
