@@ -87,17 +87,6 @@ bot.on('message', async message => {
                     con.query(sql);
             }
         });
-
-        message.channel.send({embed: {
-            author: {
-                name: "The boxed Cookie Trader!",
-                icon_url: "https://66.media.tumblr.com/cc15193e1eade70634202626f5a4d590/tumblr_p1fltrOC6F1ua0iw3o1_640.png"
-            },
-            description: "Sorry, this command isn't available to you yet! Estimated time until availability: null",
-            color: 15158332,
-            fields: []
-            }
-       })
     }
 });   
 
