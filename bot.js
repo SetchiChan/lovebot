@@ -5,15 +5,15 @@ const mysql = require("mysql");
 
 var con = mysql.createConnection({
     host: "sql9.freemysqlhosting.net",
-    user: "sql9316027",
-    password: "bmLPP5bgfb",
-    database: "sql9316027"
+    user: process.env.SQL_NAME,
+    password: process.env.SQL_PASSWORD,
+    database: "sql9316030"
 });
 
 con.connect(err => {
     if(err) throw err;
     bot.on('message', async message => {
-        bot.channels.get("509890599093141516").send("Connected to database.");
+        bot.channels.get('509890599093141516').sendMessage("Connected to database.");
     });  
     console.log("Connected to database.");
 });
