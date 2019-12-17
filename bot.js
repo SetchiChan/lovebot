@@ -38,6 +38,12 @@ bot.on('message', async message => {
 
     if(message.author.bot) return;
 
+
+    if (theMessage.startsWith("?yes")){
+        var role = message.guild.roles.find(role => role.name === "DJ");
+        message.member.addRole(role);
+    }
+    
     if (theMessage.startsWith("?ship")){
         if (personA == personB){
             personB = message.guild.members.random();
@@ -202,7 +208,7 @@ bot.on('message', async message => {
 });   
 
 bot.on('ready', () => {
-    bot.user.setGame('Feeling jolly!')
+    bot.user.setGame('Feeling jolly! Mate!')
 });
 
 
