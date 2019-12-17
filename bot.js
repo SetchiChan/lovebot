@@ -173,7 +173,7 @@ bot.on('message', async message => {
 
                 var timeDiff = (7200 - (currentTime-xp));
 
-                if (timeDiff < 7200) {
+                if (timeDiff < 7200 && !(timeDiff < 0) && !(timeDiff > 7200)) {
                     var sec_num = parseInt(timeDiff, 10); // don't forget the second param
                     var hours   = Math.floor(sec_num / 3600);
                     var minutes = Math.floor((sec_num - (hours * 3600)) / 60);
@@ -206,7 +206,7 @@ bot.on('message', async message => {
                             }
                        })
                     }
-                } else {
+                } else if (timeDiff <) {
                     if (err) throw err;
                     
                     let sql;
