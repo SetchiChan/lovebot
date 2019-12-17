@@ -80,7 +80,7 @@ bot.on('message', async message => {
                     fields: []
                     }
                })
-            } else {
+            } else if (!rows[0] || timeDiff >= 7200) {
                     if (err) throw err;
                     
                     let sql;
@@ -119,47 +119,6 @@ bot.on('message', async message => {
                             }
                        })
                     }
-            }
-
-            if(!rows[0]){
-                if (err) throw err;
-                    
-                let sql;
-            
-                if (rows.length < 1){
-                    sql = `INSERT INTO xp (id,xp) VALUES ('${message.author.id}', ${currentTime})`;
-                } else {
-                    sql = `UPDATE xp SET xp = ${currentTime} WHERE id = '${message.author.id}'`;
-                }
-            
-                con.query(sql);
-
-                var diceRoll = Math.floor(Math.random() * Math.floor(6)) + 1;
-                var computerRoll = Math.floor(Math.random() * Math.floor(6)) + 1;
-
-                if (computerRoll == diceRoll){
-                    message.channel.send({embed: {
-                        author: {
-                            name: "The boxed Cookie Trader!",
-                            icon_url: "https://66.media.tumblr.com/cc15193e1eade70634202626f5a4d590/tumblr_p1fltrOC6F1ua0iw3o1_640.png"
-                        },
-                        description: "CONGRATULATIONS!, you got yourself a free cookie. Dm ethan or just ping him for your free snack. Butt.",
-                        color: 15158332,
-                        fields: []
-                        }
-                    })
-                } else {
-                    message.channel.send({embed: {
-                        author: {
-                            name: "The boxed Cookie Trader!",
-                            icon_url: "https://66.media.tumblr.com/cc15193e1eade70634202626f5a4d590/tumblr_p1fltrOC6F1ua0iw3o1_640.png"
-                        },
-                        description: "Darn, you didn't get it! Try agian in 2 hours! You got a " + diceRoll + " and the bot got a " + computerRoll,
-                        color: 15158332,
-                        fields: []
-                        }
-                    })
-                }
             }
         });
     }
