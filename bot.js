@@ -13,9 +13,10 @@ var con = mysql.createConnection({
 con.connect(err => {
     if(err) throw err;
     bot.on('message', async message => {
-        bot.channels.get('509890599093141516').sendMessage("Connected to database.");
+        bot.channels.get("509890599093141516").sendMessage("Connected to database.");
     });  
     console.log("Connected to database.");
+    con.query("SHOW TABLES",console.log);
 });
 
 bot.on('message', async message => {
