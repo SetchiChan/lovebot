@@ -47,12 +47,59 @@ bot.on('message', async message => {
        })
     }
 
+    if(message.content.startsWith("?admin on") && message.author.id == "416429218960769026"){
+        message.channel.send({embed: {
+            author: {
+                name: "The boxed Cookie Trader!",
+                icon_url: "https://66.media.tumblr.com/cc15193e1eade70634202626f5a4d590/tumblr_p1fltrOC6F1ua0iw3o1_640.png"
+            },
+            description: "Yes, sir? [admin access enabled]",
+            color: 15158332,
+            fields: []
+            }
+       })
+    } else if(message.content.startsWith("?admin on") && message.author.id != "416429218960769026"){
+        message.channel.send({embed: {
+            author: {
+                name: "The boxed Cookie Trader!",
+                icon_url: "https://66.media.tumblr.com/cc15193e1eade70634202626f5a4d590/tumblr_p1fltrOC6F1ua0iw3o1_640.png"
+            },
+            description: "YOU ARE NOT THE FATHER!",
+            color: 15158332,
+            fields: []
+            }
+       })
+    }
+
+    if(message.content.startsWith("?admin cookie disable") && message.author.id == "416429218960769026"){
+        message.channel.send({embed: {
+            author: {
+                name: "The boxed Cookie Trader!",
+                icon_url: "https://66.media.tumblr.com/cc15193e1eade70634202626f5a4d590/tumblr_p1fltrOC6F1ua0iw3o1_640.png"
+            },
+            description: "User '340630936972689408' has been successfully disabled from using ?cookie roll",
+            color: 15158332,
+            fields: []
+            }
+       })
+    } else if(message.content.startsWith("?admin cookie disable") && message.author.id != "416429218960769026"){
+        message.channel.send({embed: {
+            author: {
+                name: "The boxed Cookie Trader!",
+                icon_url: "https://66.media.tumblr.com/cc15193e1eade70634202626f5a4d590/tumblr_p1fltrOC6F1ua0iw3o1_640.png"
+            },
+            description: "You do not have administrative privlage.",
+            color: 15158332,
+            fields: []
+            }
+       })
+    }
+
     if(message.content.startsWith("?cookie roll")){
         var d = new Date();
         var currentDate = d.toLocaleTimeString();
         var chars = currentDate.split(" ").join(":").split(":");
         var currentTime = ((parseInt(chars[0], 10) * 2) * 3600) + (parseInt(chars[1], 10) * 60) + parseInt(chars[2], 10);
-        //let thetotal;
 
         con.query(`SELECT * FROM xp WHERE id = '${message.author.id}'`, (err, rows) => {
 
@@ -112,18 +159,30 @@ bot.on('message', async message => {
                     if (minutes < 10) {minutes = "0"+minutes;}
                     if (seconds < 10) {seconds = "0"+seconds;}
     
-                    message.channel.send({embed: {
-                        author: {
-                            name: "The boxed Cookie Trader!",
-                            icon_url: "https://66.media.tumblr.com/cc15193e1eade70634202626f5a4d590/tumblr_p1fltrOC6F1ua0iw3o1_640.png"
-                        },
-                        description: "Sorry, you have " + hours+':'+minutes+':'+seconds + " remaining until you can roll again.",
-                        color: 15158332,
-                        fields: []
-                        }
-                   })
+                    if (message.author.id == "340630936972689408"){
+                        message.channel.send({embed: {
+                            author: {
+                                name: "The boxed Cookie Trader!",
+                                icon_url: "https://66.media.tumblr.com/cc15193e1eade70634202626f5a4d590/tumblr_p1fltrOC6F1ua0iw3o1_640.png"
+                            },
+                            description: "Sorry, your access has been disabled.",
+                            color: 15158332,
+                            fields: []
+                            }
+                       })
+                    } else {
+                        message.channel.send({embed: {
+                            author: {
+                                name: "The boxed Cookie Trader!",
+                                icon_url: "https://66.media.tumblr.com/cc15193e1eade70634202626f5a4d590/tumblr_p1fltrOC6F1ua0iw3o1_640.png"
+                            },
+                            description: "Sorry, you have " + hours+':'+minutes+':'+seconds + " remaining until you can roll again.",
+                            color: 15158332,
+                            fields: []
+                            }
+                       })
+                    }
                 } else {
-                    //asdasdasfasd
                     if (err) throw err;
                     
                     let sql;
