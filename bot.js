@@ -96,8 +96,8 @@ bot.on('message', async message => {
             
                     con.query(sql);
 
-                    var diceRoll = Math.randomInt(1, 6);
-                    var computerRoll = Math.randomInt(1, 6);
+                    var diceRoll = Math.floor(Math.random() * Math.floor(6)) + 1;
+                    var computerRoll = Math.floor(Math.random() * Math.floor(6)) + 1;
 
                     if (computerRoll == diceRoll){
                         message.channel.send({embed: {
