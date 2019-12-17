@@ -1,25 +1,24 @@
 const Discord = require('discord.js');
 const bot = new Discord.Client();
 const fs = require("fs");
-const scores = require("./scores.json");
-typeof scores; // object
+
+bot.msgs = require("./scores.json");
 
 bot.on('message', async message => {
-    if (message.content.startsWith("!cookie Time")){
-        if(message.author.bot) return;
-        if(!scores[message.author.tag]){ 
-            scores[message.author.id] = { 
-                money: 0 
-            };
+    if (message.content.startsWith("write")){
+        editedmessage = message.content.slice(6);
+        bot.msgs[message.author.username] = {
+            message: editedmessage
         }
-        scores[message.author.tag].money += 25;
-        fs.writeFileSync("./scores.json", JSON.stringify(scores));
-        message.channel.send('UwU Notices Buldge?');
+        fs.writeFile(".scores.json", JSON.stringify(bot.msgs, null, 4), err => {
+            if (err) throw err;
+            message.channel.send('UwU Notices Buldge?');
+        })
     }
 });     
 
 bot.on('ready', () => {
-    bot.user.setGame('asdsd')
+    bot.user.setGame('asdsd Dued')
 })
 
 
