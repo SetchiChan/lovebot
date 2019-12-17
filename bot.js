@@ -206,7 +206,7 @@ bot.on('message', async message => {
                             }
                        })
                     }
-                } else if (timeDiff <) {
+                } else {
                     if (err) throw err;
                     
                     let sql;
