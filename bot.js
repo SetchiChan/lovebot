@@ -1,30 +1,16 @@
 const Discord = require('discord.js');
-const bot = new Discord.Client();
+const Storage = require('discord-storage').Storage;
+const client = new Discord.Client();
 
-const newUser = [];
+client.once('ready', () => {
+	client.storage = new Storage(client, '509890599093141516');
+	client.storage.sync().then(() => {
+        client.channels.get("509890599093141516").send("Hello mate!")
+	});
+}); 
 
-const TOKEN = "x";
-
-bot.on('message', async message => {
-    //Example
-    if (message.content.startsWith("asdasdasdasd")) {
-       message.channel.send({embed: {
-            title: "A wild pokémon has appeared!",
-            description: "Guess the pokémon and type p!catch <pokémon> to catch it!",
-            color: 44678,
-            image: {
-                 "url": "https://pics.me.me/lewded-pikachu-37517665.png"
-               },
-            fields: []
-            }
-       });
-    }
-
-});     
-
-bot.on('ready', () => {
-    bot.user.setGame('WIP? crash?')
+client.on('ready', () => {
+    bot.user.setGame('WIP? Mate?')
 })
 
-
-bot.login(process.env.BOT_TOKEN);
+client.login(process.env.BOT_TOKEN);
