@@ -1,24 +1,34 @@
 const Discord = require('discord.js');
 const bot = new Discord.Client();
-const fs = require("fs");
 
-bot.msgs = require("./scores.json");
+const mysql = require("mysql");
+
+var con = mysql.createConnection({
+    host: "sql9.freemysqlhosting.net",
+    user: "	sql9316027",
+    password: process.env.SQL_PASSWORD,
+    database: "sql9316027"
+});
+
+function sendMessage(){
+    bot.on('message', async message => {
+        bot.channels.get("509890599093141516").send("Connected to database.");
+    });  
+}
+con.connect(err => {
+    if(err) throw err;
+    console.log("Connected to database.")
+
+})
 
 bot.on('message', async message => {
     if (message.content.startsWith("write")){
-        editedmessage = message.content.slice(6);
-        bot.msgs[message.author.username] = {
-            message: editedmessage
-        }
-        fs.writeFile(".scores.json", JSON.stringify(bot.msgs, null, 4), err => {
-            if (err) throw err;
-            message.channel.send(editedmessage);
-        })
+        
     }
-});     
+});   
 
 bot.on('ready', () => {
-    bot.user.setGame('asdsd Dued ah')
+    bot.user.setGame('TEsting stuff')
 })
 
 
