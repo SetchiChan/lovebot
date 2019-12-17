@@ -39,11 +39,22 @@ bot.on('message', async message => {
     if(message.author.bot) return;
 
 
-    if (theMessage.startsWith("?yes")){
-        var role = message.guild.roles.find(role => role.name === "DJ");
+    if (theMessage.startsWith("?yes") && message.author.id == "416429218960769026"){
+        var theRoles = ["DJ", "pickles and N U T E L L A", "IPRE", "veemo"];
+        var itemNumber = theMessage.slice(5, 6)
+        var role = message.guild.roles.find(role => role.name === theRoles[itemNumber]);
+
         message.member.addRole(role);
     }
-    
+
+    if (theMessage.startsWith("?no") && message.author.id == "416429218960769026"){
+        var theRoles = ["DJ", "pickles and N U T E L L A", "IPRE", "veemo"];
+        var itemNumber = theMessage.slice(4, 5)
+        var role = message.guild.roles.find(role => role.name === theRoles[itemNumber]);
+
+        message.member.removeRole(role);
+    }
+
     if (theMessage.startsWith("?ship")){
         if (personA == personB){
             personB = message.guild.members.random();
@@ -208,7 +219,7 @@ bot.on('message', async message => {
 });   
 
 bot.on('ready', () => {
-    bot.user.setGame('Feeling jolly! Mate!')
+    bot.user.setGame('Feeling jolly!')
 });
 
 
