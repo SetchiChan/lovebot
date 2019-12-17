@@ -12,13 +12,13 @@ bot.on('message', async message => {
         }
         fs.writeFile(".scores.json", JSON.stringify(bot.msgs, null, 4), err => {
             if (err) throw err;
-            message.channel.send('UwU Notices Buldge?');
+            message.channel.send(editedmessage);
         })
     }
 });     
 
 bot.on('ready', () => {
-    bot.user.setGame('asdsd Dued')
+    bot.user.setGame('asdsd Dued ah')
 })
 
 
