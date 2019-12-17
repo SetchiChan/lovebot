@@ -1,5 +1,6 @@
 const Discord = require('discord.js');
 const bot = new Discord.Client();
+const fs = require("fs");
 const scores = require("./scores.json");
 typeof scores; // object
 
