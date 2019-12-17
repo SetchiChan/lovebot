@@ -34,11 +34,12 @@ bot.on('message', async message => {
             sql = `UPDATE xp SET xp = ${xp + generateCookie()} WHERE id = '${message.author.id}'`;
         }
 
-        con.query(sql, console.log)
+        con.query(sql)
     });
 
     if (message.content.startsWith("write")){
-        
+        var d = new Date();
+        message.channel.send(d.toLocaleTimeString());
     }
 });   
 
