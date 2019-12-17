@@ -56,33 +56,74 @@ bot.on('message', async message => {
 
         con.query(`SELECT * FROM xp WHERE id = '${message.author.id}'`, (err, rows) => {
 
-            let xp = rows[0].xp;
-
-            var timeDiff = (7200 - (currentTime-xp));
-
-            if (timeDiff < 7200){
-                var sec_num = parseInt(timeDiff, 10); // don't forget the second param
-                var hours   = Math.floor(sec_num / 3600);
-                var minutes = Math.floor((sec_num - (hours * 3600)) / 60);
-                var seconds = sec_num - (hours * 3600) - (minutes * 60);
-
-                if (hours   < 10) {hours   = "0"+hours;}
-                if (minutes < 10) {minutes = "0"+minutes;}
-                if (seconds < 10) {seconds = "0"+seconds;}
-
-                message.channel.send({embed: {
-                    author: {
-                        name: "The boxed Cookie Trader!",
-                        icon_url: "https://66.media.tumblr.com/cc15193e1eade70634202626f5a4d590/tumblr_p1fltrOC6F1ua0iw3o1_640.png"
-                    },
-                    description: "Sorry, you have " + hours+':'+minutes+':'+seconds + " remaining until you can roll again.",
-                    color: 15158332,
-                    fields: []
-                    }
-               })
-            } else {
-                con.query(`SELECT * FROM xp WHERE id = '${message.author.id}'`, (err, rows) => {
+            if(!rows[0]){
+                if (err) throw err;
                     
+                let sql;
+            
+                if (rows.length < 1){
+                    sql = `INSERT INTO xp (id,xp) VALUES ('${message.author.id}', ${currentTime})`;
+                } else {
+                    sql = `UPDATE xp SET xp = ${currentTime} WHERE id = '${message.author.id}'`;
+                }
+            
+                con.query(sql);
+
+                var diceRoll = Math.floor(Math.random() * Math.floor(6)) + 1;
+                var computerRoll = Math.floor(Math.random() * Math.floor(6)) + 1;
+
+
+                if (computerRoll == diceRoll){
+                    message.channel.send({embed: {
+                        author: {
+                            name: "The boxed Cookie Trader!",
+                            icon_url: "https://66.media.tumblr.com/cc15193e1eade70634202626f5a4d590/tumblr_p1fltrOC6F1ua0iw3o1_640.png"
+                        },
+                        description: "CONGRATULATIONS " + message.author.id + "!, you got yourself a free cookie. Dm ethan or just ping him for your free snack. Butt.",
+                        color: 15158332,
+                        fields: []
+                    }
+                    })
+                } else {
+                    message.channel.send({embed: {
+                        author: {
+                            name: "The boxed Cookie Trader!",
+                            icon_url: "https://66.media.tumblr.com/cc15193e1eade70634202626f5a4d590/tumblr_p1fltrOC6F1ua0iw3o1_640.png"
+                        },
+                        description: "Darn, you didn't get it! Try agian in 2 hours! You got a " + diceRoll + " and the bot got a " + computerRoll,
+                        color: 15158332,
+                        fields: []
+                    }
+                    })
+                }
+            } else {
+
+                let xp = rows[0].xp;
+
+                var timeDiff = (7200 - (currentTime-xp));
+
+                if (timeDiff < 7200) {
+                    var sec_num = parseInt(timeDiff, 10); // don't forget the second param
+                    var hours   = Math.floor(sec_num / 3600);
+                    var minutes = Math.floor((sec_num - (hours * 3600)) / 60);
+                    var seconds = sec_num - (hours * 3600) - (minutes * 60);
+    
+                    if (hours   < 10) {hours   = "0"+hours;}
+                    if (minutes < 10) {minutes = "0"+minutes;}
+                    if (seconds < 10) {seconds = "0"+seconds;}
+    
+                    message.channel.send({embed: {
+                        author: {
+                            name: "The boxed Cookie Trader!",
+                            icon_url: "https://66.media.tumblr.com/cc15193e1eade70634202626f5a4d590/tumblr_p1fltrOC6F1ua0iw3o1_640.png"
+                        },
+                        description: "Sorry, you have " + hours+':'+minutes+':'+seconds + " remaining until you can roll again.",
+                        color: 15158332,
+                        fields: []
+                        }
+                   })
+                } else {
+                    //asdasdasfasd
                     if (err) throw err;
                     
                     let sql;
@@ -94,10 +135,11 @@ bot.on('message', async message => {
                     }
                 
                     con.query(sql);
-    
+
                     var diceRoll = Math.floor(Math.random() * Math.floor(6)) + 1;
                     var computerRoll = Math.floor(Math.random() * Math.floor(6)) + 1;
-    
+
+
                     if (computerRoll == diceRoll){
                         message.channel.send({embed: {
                             author: {
@@ -121,8 +163,7 @@ bot.on('message', async message => {
                         }
                         })
                     }
-                    
-                });
+                }
             }
         });
     }
