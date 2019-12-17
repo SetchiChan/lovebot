@@ -63,19 +63,15 @@ bot.on('message', async message => {
         {
             thetotal = ((parseInt(chars[0], 10) * 2) * 3600) + (parseInt(chars[1], 10) * 60) + parseInt(chars[2], 10);
         }
-
-        if (3 == 3){
-            message.channel.send(thetotal);
-            message.channel.send(currentTime);
-            message.channel.send("Sorry, you still have" + (currentTime - 30460).toHHMMSS());
-        } 
         //message.channel.send(d.toLocaleTimeString());
     }
 
     if (message.content.startsWith("?test")){
-        let target = message.mentions.first() || message.guild.memebers.get(args[1]) || message.author;
+        let target = message.mentions.users.first() || message.guild.memebers.get(args[1]) || message.author;
 
         con.query(`SELECT * FROM xp WHERE id = '${target.id}'`, (err, rows) => {
+
+            if(!rows[0]) return message.channel.send("This person has no xp on record.");
 
             let xp = rows[0].xp;
             message.channel.send(xp);
