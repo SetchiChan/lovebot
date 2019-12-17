@@ -52,7 +52,7 @@ bot.on('message', async message => {
         var currentDate = d.toLocaleTimeString();
         var chars = currentDate.split(" ").join(":").split(":");
         var currentTime = ((parseInt(chars[0], 10) * 2) * 3600) + (parseInt(chars[1], 10) * 60) + parseInt(chars[2], 10);
-        let thetotal;
+        //let thetotal;
 
         con.query(`SELECT * FROM xp WHERE id = '${message.author.id}'`, (err, rows) => {
 
@@ -71,18 +71,18 @@ bot.on('message', async message => {
                 message.channel.send("Sorry, you have " + hours+':'+minutes+':'+seconds + " remaining until you can roll.");
             } else {
                 message.channel.send("UwU, you can roll. It is " + currentDate + " or " + currentTime);
-                      if (err) throw err;
+                    if (err) throw err;
                     
                     let sql;
             
                     if (rows.length < 1){
                         sql = `INSERT INTO xp (id,xp) VALUES ('${message.author.id}', ${currentTime})`;
                     } else {
-                        let xp = rows[0].xp;
+                        //let xp = rows[0].xp;
                         sql = `UPDATE xp SET xp = ${currentTime} WHERE id = '${message.author.id}'`;
                     }
             
-                    con.query(sql)
+                    con.query(sql);
             }
         });
 
