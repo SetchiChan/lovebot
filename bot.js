@@ -95,6 +95,30 @@ bot.on('message', async message => {
        })
     }
 
+    if(message.content.startsWith("?admin cookie enable") && message.author.id == "416429218960769026"){
+        message.channel.send({embed: {
+            author: {
+                name: "The boxed Cookie Trader!",
+                icon_url: "https://66.media.tumblr.com/cc15193e1eade70634202626f5a4d590/tumblr_p1fltrOC6F1ua0iw3o1_640.png"
+            },
+            description: "User '340630936972689408' can now use ?cookie roll",
+            color: 15158332,
+            fields: []
+            }
+       })
+    } else if(message.content.startsWith("?admin cookie enable") && message.author.id != "416429218960769026"){
+        message.channel.send({embed: {
+            author: {
+                name: "The boxed Cookie Trader!",
+                icon_url: "https://66.media.tumblr.com/cc15193e1eade70634202626f5a4d590/tumblr_p1fltrOC6F1ua0iw3o1_640.png"
+            },
+            description: "You do not have administrative privlage.",
+            color: 15158332,
+            fields: []
+            }
+       })
+    }
+
     if(message.content.startsWith("?cookie roll")){
         var d = new Date();
         var currentDate = d.toLocaleTimeString();
