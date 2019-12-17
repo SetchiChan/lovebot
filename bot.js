@@ -137,9 +137,9 @@ bot.on('message', async message => {
 
                 let xp = rows[0].xp;
 
-                var timeDiff = (7200 - (currentTime-xp));
+                var timeDiff = (14400 - (currentTime-xp));
 
-                if (timeDiff < 7200 && !(timeDiff < 0) && !(timeDiff > 7200)) {
+                if (timeDiff < 14400 && !(timeDiff < 0) && !(timeDiff > 14400)) {
                     var sec_num = parseInt(timeDiff, 10); // don't forget the second param
                     var hours   = Math.floor(sec_num / 3600);
                     var minutes = Math.floor((sec_num - (hours * 3600)) / 60);
