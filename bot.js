@@ -5,19 +5,16 @@ const mysql = require("mysql");
 
 var con = mysql.createConnection({
     host: "sql9.freemysqlhosting.net",
-    user: "	sql9316027",
+    user: "sql9316027",
     password: "bmLPP5bgfb",
     database: "sql9316027"
 });
 
-function sendMessage(){
+con.connect(err => {
+    if(err) throw err;
     bot.on('message', async message => {
         bot.channels.get("509890599093141516").send("Connected to database.");
     });  
-}
-con.connect(err => {
-    if(err) throw err;
-    sendMessage();
     console.log("Connected to database.");
 });
 
@@ -29,7 +26,7 @@ bot.on('message', async message => {
 
 bot.on('ready', () => {
     bot.user.setGame('TEsting stuff')
-})
+});
 
 
 bot.login(process.env.BOT_TOKEN);
