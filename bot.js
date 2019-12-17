@@ -34,53 +34,102 @@ String.prototype.toHHMMSS = function () {
 bot.on('message', async message => {
     if(message.author.bot) return;
 
-    con.query(`SELECT * FROM xp WHERE id = '${message.author.id}'`, (err, rows) => {
-        if (err) throw err;
-        
-        let sql;
+    if(message.content.startsWith("?cookie help")){
+        message.channel.send({embed: {
+            author: {
+                name: "The boxed Cookie Trader!",
+                icon_url: "https://66.media.tumblr.com/cc15193e1eade70634202626f5a4d590/tumblr_p1fltrOC6F1ua0iw3o1_640.png"
+            },
+            description: "Hello there! Feeling lucky and hungry? Well, use the command '?cookie roll' to roll! You might win a cookie.",
+            color: 15158332,
+            fields: []
+            }
+       })
+    }
 
-        if (rows.length < 1){
-            sql = `INSERT INTO xp (id,xp) VALUES ('${message.author.id}', ${generateCookie()})`;
-        } else {
-            let xp = rows[0].xp;
-            sql = `UPDATE xp SET xp = ${xp + generateCookie()} WHERE id = '${message.author.id}'`;
-        }
-
-        con.query(sql)
-    });
-
-    if (message.content.startsWith("?cookie Roll")){
+    if(message.content.startsWith("?cookie roll")){
         var d = new Date();
         var currentDate = d.toLocaleTimeString();
         var chars = currentDate.split(" ").join(":").split(":");
         var currentTime = ((parseInt(chars[0], 10) * 2) * 3600) + (parseInt(chars[1], 10) * 60) + parseInt(chars[2], 10);
-        let thetotal;
+        //let thetotal;
 
-        if (chars[3] == "AM"){
-            thetotal = (parseInt(chars[0], 10) * 3600) + (parseInt(chars[1], 10) * 60) + parseInt(chars[2], 10);
-        } 
-        else if (chars[3] == "PM")
-        {
-            thetotal = ((parseInt(chars[0], 10) * 2) * 3600) + (parseInt(chars[1], 10) * 60) + parseInt(chars[2], 10);
-        }
-        //message.channel.send(d.toLocaleTimeString());
-    }
-
-    if (message.content.startsWith("?test")){
-        let target = message.mentions.users.first() || message.guild.memebers.get(args[1]) || message.author;
-
-        con.query(`SELECT * FROM xp WHERE id = '${target.id}'`, (err, rows) => {
-
-            if(!rows[0]) return message.channel.send("This person has no xp on record.");
+        con.query(`SELECT * FROM xp WHERE id = '${message.author.id}'`, (err, rows) => {
 
             let xp = rows[0].xp;
-            message.channel.send(xp);
+
+            var timeDiff = (7200 - (currentTime-xp));
+
+            if (timeDiff < 7200){
+                var sec_num = parseInt(timeDiff, 10); // don't forget the second param
+                var hours   = Math.floor(sec_num / 3600);
+                var minutes = Math.floor((sec_num - (hours * 3600)) / 60);
+                var seconds = sec_num - (hours * 3600) - (minutes * 60);
+
+                if (hours   < 10) {hours   = "0"+hours;}
+                if (minutes < 10) {minutes = "0"+minutes;}
+                if (seconds < 10) {seconds = "0"+seconds;}
+
+                message.channel.send({embed: {
+                    author: {
+                        name: "The boxed Cookie Trader!",
+                        icon_url: "https://66.media.tumblr.com/cc15193e1eade70634202626f5a4d590/tumblr_p1fltrOC6F1ua0iw3o1_640.png"
+                    },
+                    description: "Sorry, you have " + hours+':'+minutes+':'+seconds + " remaining until you can roll again.",
+                    color: 15158332,
+                    fields: []
+                    }
+               })
+            } else {
+                con.query(`SELECT * FROM xp WHERE id = '${message.author.id}'`, (err, rows) => {
+                    
+                    if (err) throw err;
+                    
+                    let sql;
+                
+                    if (rows.length < 1){
+                        sql = `INSERT INTO xp (id,xp) VALUES ('${message.author.id}', ${currentTime})`;
+                    } else {
+                        sql = `UPDATE xp SET xp = ${currentTime} WHERE id = '${message.author.id}'`;
+                    }
+                
+                    con.query(sql);
+    
+                    var diceRoll = Math.floor(Math.random() * Math.floor(6)) + 1;
+                    var computerRoll = Math.floor(Math.random() * Math.floor(6)) + 1;
+    
+                    if (computerRoll == diceRoll){
+                        message.channel.send({embed: {
+                            author: {
+                                name: "The boxed Cookie Trader!",
+                                icon_url: "https://66.media.tumblr.com/cc15193e1eade70634202626f5a4d590/tumblr_p1fltrOC6F1ua0iw3o1_640.png"
+                            },
+                            description: "CONGRATULATIONS " + message.author.id + "!, you got yourself a free cookie. Dm ethan or just ping him for your free snack. Butt.",
+                            color: 15158332,
+                            fields: []
+                        }
+                        })
+                    } else {
+                        message.channel.send({embed: {
+                            author: {
+                                name: "The boxed Cookie Trader!",
+                                icon_url: "https://66.media.tumblr.com/cc15193e1eade70634202626f5a4d590/tumblr_p1fltrOC6F1ua0iw3o1_640.png"
+                            },
+                            description: "Darn, you didn't get it! Try agian in 2 hours! You got a " + diceRoll + " and the bot got a " + computerRoll,
+                            color: 15158332,
+                            fields: []
+                        }
+                        })
+                    }
+                    
+                });
+            }
         });
     }
 });   
 
 bot.on('ready', () => {
-    bot.user.setGame('TEsting stuff')
+    bot.user.setGame('Feeling jolly!')
 });
 
 
