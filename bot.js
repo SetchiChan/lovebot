@@ -70,7 +70,7 @@ bot.on('message', async message => {
                 if (minutes < 10) {minutes = "0"+minutes;}
                 if (seconds < 10) {seconds = "0"+seconds;}
 
-                message.channel.send("Sorry, you have " + hours+':'+minutes+':'+seconds + " remaining until you can roll. or" + currentTime-xp);
+                message.channel.send("Sorry, you have " + hours+':'+minutes+':'+seconds + " remaining until you can roll. or");
             } else {
                 message.channel.send("UwU, you can roll. It is " + currentDate + " or " + currentTime);
                     if (err) throw err;
