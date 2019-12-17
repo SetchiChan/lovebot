@@ -21,20 +21,21 @@ function generateCookie(){
 }
 
 bot.on('message', async message => {
+    if(message.author.bot) return;
 
-    con.query(`SELECT * FROM id ='${message.author.id}'`, (err, rows) => {
+    con.query(`SELECT * FROM xp WHERE id = '${message.author.id}'`, (err, rows) => {
         if (err) throw err;
         
         let sql;
 
         if (rows.length < 1){
-            sql = `INSERT INTO xp (id,xp) VALUES ('${message.author.id}', ${generateCookie()})`
+            sql = `INSERT INTO xp (id,xp) VALUES ('${message.author.id}', ${generateCookie()})`;
         } else {
             let xp = rows[0].xp;
         }
-        sql = `UPDATE xp SET xp = ${xp + generateCookie()} WHERE id = '${message.author.id}'`
+        sql = `UPDATE xp SET xp = ${xp + generateCookie()} WHERE id = '${message.author.id}'`;
         con.query(sql, console.log)
-    })
+    });
 
     if (message.content.startsWith("write")){
         
@@ -42,7 +43,7 @@ bot.on('message', async message => {
 });   
 
 bot.on('ready', () => {
-    bot.user.setGame('TEsting stuff mate')
+    bot.user.setGame('TEsting stuff')
 });
 
 
