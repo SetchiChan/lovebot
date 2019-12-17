@@ -1,6 +1,5 @@
 const Discord = require('discord.js');
 const bot = new Discord.Client();
-
 const mysql = require("mysql");
 
 var con = mysql.createConnection({
@@ -32,87 +31,37 @@ String.prototype.toHHMMSS = function () {
 }
 
 bot.on('message', async message => {
+    const personA = message.guild.members.random();
+    const personB = message.guild.members.random();
+
+    theMessage = message.content.toLowerCase();
+
     if(message.author.bot) return;
 
-    if(message.content.startsWith("?cookie help")){
+    if (theMessage.startsWith("?ship")){
+        if (personA == personB){
+            personB = message.guild.members.random();
+        }
+        console.log(personA);
+        message.channel.send({embed: {
+            author: {
+                name: "The boxed Cookie Trader!",
+                icon_url: "https://66.media.tumblr.com/cc15193e1eade70634202626f5a4d590/tumblr_p1fltrOC6F1ua0iw3o1_640.png"
+            },
+            description: "Under the christmas tree, you see " + personA + " and " + personB + " kissing under the mistletoe.",
+            color: 15158332,
+            fields: []
+            }
+       })
+    }
+
+    if(theMessage.startsWith("?cookie help")){
         message.channel.send({embed: {
             author: {
                 name: "The boxed Cookie Trader!",
                 icon_url: "https://66.media.tumblr.com/cc15193e1eade70634202626f5a4d590/tumblr_p1fltrOC6F1ua0iw3o1_640.png"
             },
             description: "Hello there! Feeling lucky and hungry? Well, use the command '?cookie roll' to roll! You might win a cookie.",
-            color: 15158332,
-            fields: []
-            }
-       })
-    }
-
-    if(message.content.startsWith("?admin on") && message.author.id == "416429218960769026"){
-        message.channel.send({embed: {
-            author: {
-                name: "The boxed Cookie Trader!",
-                icon_url: "https://66.media.tumblr.com/cc15193e1eade70634202626f5a4d590/tumblr_p1fltrOC6F1ua0iw3o1_640.png"
-            },
-            description: "Yes, sir? [admin access enabled]",
-            color: 15158332,
-            fields: []
-            }
-       })
-    } else if(message.content.startsWith("?admin on") && message.author.id != "416429218960769026"){
-        message.channel.send({embed: {
-            author: {
-                name: "The boxed Cookie Trader!",
-                icon_url: "https://66.media.tumblr.com/cc15193e1eade70634202626f5a4d590/tumblr_p1fltrOC6F1ua0iw3o1_640.png"
-            },
-            description: "YOU ARE NOT THE FATHER!",
-            color: 15158332,
-            fields: []
-            }
-       })
-    }
-
-    if(message.content.startsWith("?admin cookie disable") && message.author.id == "416429218960769026"){
-        message.channel.send({embed: {
-            author: {
-                name: "The boxed Cookie Trader!",
-                icon_url: "https://66.media.tumblr.com/cc15193e1eade70634202626f5a4d590/tumblr_p1fltrOC6F1ua0iw3o1_640.png"
-            },
-            description: "User '340630936972689408' has been successfully disabled from using ?cookie roll",
-            color: 15158332,
-            fields: []
-            }
-       })
-    } else if(message.content.startsWith("?admin cookie disable") && message.author.id != "416429218960769026"){
-        message.channel.send({embed: {
-            author: {
-                name: "The boxed Cookie Trader!",
-                icon_url: "https://66.media.tumblr.com/cc15193e1eade70634202626f5a4d590/tumblr_p1fltrOC6F1ua0iw3o1_640.png"
-            },
-            description: "You do not have administrative privlage.",
-            color: 15158332,
-            fields: []
-            }
-       })
-    }
-
-    if(message.content.startsWith("?admin cookie enable") && message.author.id == "416429218960769026"){
-        message.channel.send({embed: {
-            author: {
-                name: "The boxed Cookie Trader!",
-                icon_url: "https://66.media.tumblr.com/cc15193e1eade70634202626f5a4d590/tumblr_p1fltrOC6F1ua0iw3o1_640.png"
-            },
-            description: "User '340630936972689408' can now use ?cookie roll",
-            color: 15158332,
-            fields: []
-            }
-       })
-    } else if(message.content.startsWith("?admin cookie enable") && message.author.id != "416429218960769026"){
-        message.channel.send({embed: {
-            author: {
-                name: "The boxed Cookie Trader!",
-                icon_url: "https://66.media.tumblr.com/cc15193e1eade70634202626f5a4d590/tumblr_p1fltrOC6F1ua0iw3o1_640.png"
-            },
-            description: "You do not have administrative privlage.",
             color: 15158332,
             fields: []
             }
