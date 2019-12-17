@@ -48,6 +48,14 @@ bot.on('message', async message => {
     }
 
     if(message.content.startsWith("?cookie roll")){
+        con.query(`SELECT * FROM xp WHERE id = '${message.author.id}'`, (err, rows) => {
+
+            if(!rows[0]) return message.channel.send("This person has no rolls on record.");
+
+            let xp = rows[0].xp;
+            message.channel.send(xp);
+        });
+
         message.channel.send({embed: {
             author: {
                 name: "The boxed Cookie Trader!",
