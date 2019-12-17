@@ -60,7 +60,7 @@ bot.on('message', async message => {
 
             let xp = rows[0].xp;
 
-            var timeDiff = (7200 - (currentTime-xp));
+            var timeDiff = (7200 - (currentTime-xp-9000));
 
             if (timeDiff < 7200){
                 var sec_num = parseInt(timeDiff, 10); // don't forget the second param
