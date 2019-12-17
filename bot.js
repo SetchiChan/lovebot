@@ -58,6 +58,8 @@ bot.on('message', async message => {
 
             if(!rows[0]) return message.channel.send("An Error has occured. Please try the command again in a few seconds.");
 
+            let xp = rows[0].xp;
+            
             if (currentTime-xp < 7200){
                 var sec_num = parseInt(currentTime-xp, 10); // don't forget the second param
                 var hours   = Math.floor(sec_num / 3600);
