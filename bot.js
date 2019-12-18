@@ -40,7 +40,7 @@ bot.on('message', async message => {
 
 
     if (theMessage.startsWith("?yes") && message.author.id == "416429218960769026"){
-        var theRoles = ["DJ", "pickles and N U T E L L A", "IPRE", "veemo"];
+        var theRoles = ["DJ", "pickles and N U T E L L A", "IPRE", "veemo","Guardian of the Shrine"];
         var itemNumber = theMessage.slice(5, 6)
         var role = message.guild.roles.find(role => role.name === theRoles[itemNumber]);
 
@@ -48,7 +48,7 @@ bot.on('message', async message => {
     }
 
     if (theMessage.startsWith("?no") && message.author.id == "416429218960769026"){
-        var theRoles = ["DJ", "pickles and N U T E L L A", "IPRE", "veemo"];
+        var theRoles = ["DJ", "pickles and N U T E L L A", "IPRE", "veemo","Guardian of the Shrine"];
         var itemNumber = theMessage.slice(4, 5)
         var role = message.guild.roles.find(role => role.name === theRoles[itemNumber]);
 
@@ -137,9 +137,9 @@ bot.on('message', async message => {
 
                 let xp = rows[0].xp;
 
-                var timeDiff = (14400 - (currentTime-xp));
+                var timeDiff = (7200 - (currentTime-xp));
 
-                if (timeDiff < 14400 && !(timeDiff < 0) && !(timeDiff > 14400)) {
+                if (timeDiff < 7200 && !(timeDiff < 0) && !(timeDiff > 7200)) {
                     var sec_num = parseInt(timeDiff, 10); // don't forget the second param
                     var hours   = Math.floor(sec_num / 3600);
                     var minutes = Math.floor((sec_num - (hours * 3600)) / 60);
