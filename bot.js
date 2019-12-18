@@ -40,21 +40,26 @@ bot.on('message', async message => {
 
 
     if (theMessage.startsWith("?yes") && message.author.id == "416429218960769026"){
-        let target = message.mentions.users.first() || message.guild.memebers.get(args[1]) || message.author;
         var theRoles = ["DJ", "pickles and N U T E L L A", "IPRE", "veemo","Guardian of the Shrine"];
         var itemNumber = theMessage.slice(5, 6)
         var role = message.guild.roles.find(role => role.name === theRoles[itemNumber]);
 
-        target.addRole(role);
+        message.author.addRole(role);
     }
 
     if (theMessage.startsWith("?no") && message.author.id == "416429218960769026"){
-        let target = message.mentions.users.first() || message.guild.memebers.get(args[1]) || message.author;
         var theRoles = ["DJ", "pickles and N U T E L L A", "IPRE", "veemo","Guardian of the Shrine"];
         var itemNumber = theMessage.slice(4, 5)
         var role = message.guild.roles.find(role => role.name === theRoles[itemNumber]);
 
-        target.removeRole(role);
+        message.author.removeRole(role);
+    }
+
+    if (theMessage.startsWith("?dandlesucks") && message.author.id == "416429218960769026"){
+        var role = message.guild.roles.find(role => role.name === theRoles[itemNumber]);
+
+        message.mentions.users.first().addRole(message.guild.roles.find(role => role.name === "veemo"));
+
     }
 
     if (theMessage.startsWith("?ship")){
