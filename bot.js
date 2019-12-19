@@ -66,7 +66,6 @@ bot.on('message', async message => {
         if (personA == personB){
             personB = message.guild.members.random();
         }
-        console.log(personA);
         message.channel.send({embed: {
             author: {
                 name: "The boxed Cookie Trader!",
@@ -113,8 +112,8 @@ bot.on('message', async message => {
             
                 con.query(sql);
 
-                var diceRoll = Math.floor(Math.random() * Math.floor(6)) + 1;
-                var computerRoll = Math.floor(Math.random() * Math.floor(6)) + 1;
+                var diceRoll = Math.floor(Math.random() * Math.floor(5)) + 1;
+                var computerRoll = Math.floor(Math.random() * Math.floor(5)) + 1;
 
 
                 if (computerRoll == diceRoll){
@@ -123,7 +122,7 @@ bot.on('message', async message => {
                             name: "The boxed Cookie Trader!",
                             icon_url: "https://66.media.tumblr.com/cc15193e1eade70634202626f5a4d590/tumblr_p1fltrOC6F1ua0iw3o1_640.png"
                         },
-                        description: "CONGRATULATIONS " + message.author.id + "!, you got yourself a free cookie. Dm ethan or just ping him for your free snack. Butt.",
+                        description: "CONGRATULATIONS " + message.author.id + "! Here comes the clown. Boo hoo, he took the cookie. He replaced it with a potato.",
                         color: 15158332,
                         fields: []
                     }
@@ -192,17 +191,27 @@ bot.on('message', async message => {
                 
                     con.query(sql);
 
-                    var diceRoll = Math.floor(Math.random() * Math.floor(6)) + 1;
-                    var computerRoll = Math.floor(Math.random() * Math.floor(6)) + 1;
+                    var diceRoll = Math.floor(Math.random() * Math.floor(5)) + 1;
+                    var computerRoll = Math.floor(Math.random() * Math.floor(5)) + 1;
 
-
-                    if (computerRoll == diceRoll){
+                    if (message.author.id == "416429218960769026"){
                         message.channel.send({embed: {
                             author: {
                                 name: "The boxed Cookie Trader!",
                                 icon_url: "https://66.media.tumblr.com/cc15193e1eade70634202626f5a4d590/tumblr_p1fltrOC6F1ua0iw3o1_640.png"
                             },
-                            description: "CONGRATULATIONS " + message.author.id + "!, you got yourself a free cookie. Dm ethan or just ping him for your free snack. Butt.",
+                            description: "CONGRATULATIONS <@" + message.author.id + ">! Here comes the clown. Boo hoo, he took the cookie. He replaced it with a potato.",
+                            color: 15158332,
+                            fields: []
+                        }
+                        })
+                    } else if (computerRoll == diceRoll){
+                        message.channel.send({embed: {
+                            author: {
+                                name: "The boxed Cookie Trader!",
+                                icon_url: "https://66.media.tumblr.com/cc15193e1eade70634202626f5a4d590/tumblr_p1fltrOC6F1ua0iw3o1_640.png"
+                            },
+                            description: "CONGRATULATIONS <@" + message.author.id + ">! Here comes the clown. Boo hoo, he took the cookie. He replaced it with a potato.",
                             color: 15158332,
                             fields: []
                         }
@@ -213,7 +222,7 @@ bot.on('message', async message => {
                                 name: "The boxed Cookie Trader!",
                                 icon_url: "https://66.media.tumblr.com/cc15193e1eade70634202626f5a4d590/tumblr_p1fltrOC6F1ua0iw3o1_640.png"
                             },
-                            description: "Darn, you didn't get it! Try agian in 2 hours! You got a " + diceRoll + " and the bot got a " + computerRoll,
+                            description: "Darn, you didn't get it! Try again in 2 hours! You got a " + diceRoll + " and the bot got a " + computerRoll,
                             color: 15158332,
                             fields: []
                         }
