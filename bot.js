@@ -22,6 +22,58 @@ bot.on('message', async message => {
 
     if(message.author.bot) return;
 
+    if (theMessage.startsWith("?admin xp add") && message.author.id == "416429218960769026"){
+
+        message.channel.send({embed: {
+            author: {
+                name: "SCP-079 [Admin Handler]",
+                icon_url: "https://vignette.wikia.nocookie.net/villains/images/b/b8/SCP-079HD.jpg/revision/latest?cb=20180428210516"
+            },
+            description: "Successfully added 300 XP to " + message.author,
+            color: 9807270,
+            fields: []
+            }
+       })
+
+       message.channel.send({embed: {
+        author: {
+            name: "Croiter the Banker",
+            icon_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScl1wfECzdCt8R_hoaH0rg33RxYM-RaW26IphvGKGVK2MiaMlrHA&s"
+        },
+        description: message.author + "\n\nYou have leveled up to level 2! You have recieved 25 Credits to spend in ?shop",
+        color: 9807270,
+        fields: []
+        }
+        })
+    } 
+    else if (theMessage.startsWith("?admin xp add"))
+    {
+        message.channel.send({embed: {
+            author: {
+                name: "SCP-079 [Admin Handler]",
+                icon_url: "https://vignette.wikia.nocookie.net/villains/images/b/b8/SCP-079HD.jpg/revision/latest?cb=20180428210516"
+            },
+            description: message.author + ", You are not an admin of this bot.",
+            color: 9807270,
+            fields: []
+            }
+       })
+    }
+
+    if (theMessage.startsWith("?shop")){
+
+       message.channel.send({embed: {
+        author: {
+            name: "Croiter the Banker",
+            icon_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScl1wfECzdCt8R_hoaH0rg33RxYM-RaW26IphvGKGVK2MiaMlrHA&s"
+        },
+        description: message.author + "\n\nSorry! The shop is is construction right now.",
+        color: 9807270,
+        fields: []
+        }
+        })
+    } 
+
     if (theMessage.startsWith("?admin event duel") && message.author.id == "416429218960769026"){
 
         message.channel.send({embed: {
@@ -44,7 +96,7 @@ bot.on('message', async message => {
             }
        })
     } 
-    else if (theMessage.startsWith("?admin event duel admin"))
+    else if (theMessage.startsWith("?admin event duel"))
     {
         message.channel.send({embed: {
             author: {
