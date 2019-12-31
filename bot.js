@@ -28,7 +28,7 @@ bot.on('message', async message => {
                 name: "Zeen the Crucible Master",
                 icon_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwSMXOY-1KOQE-5zLxpeDVjCSTZmPbdD3JoaUT_NoyD4BGp8vk&s"
             },
-            description: "It's event time Platners! <@>416429218960769026> and " + personA + " have been selected to fight for 900 XP. \n\nYou can either pick to steal or share. If both Platner decide to share, each player will recieve 450 XP. If one Platner decides to steal, and the other shares, the person who steals will recieve the 900 XP. If both Platners steal, no XP will be distributed. \n\nBoth Platners have recieved a dm to decide. Do not message your answer in this channel. Once both players select an option, a winner will be decided. Expires in 1 hour.\n\n['Bot Note: In Development Command. Testing is enabled.']",
+            description: "It's event time Platners! <@416429218960769026> and " + personA + " have been selected to fight for 900 XP. \n\nYou can either pick to steal or share. If both Platner decide to share, each player will recieve 450 XP. If one Platner decides to steal, and the other shares, the person who steals will recieve the 900 XP. If both Platners steal, no XP will be distributed. \n\nBoth Platners have recieved a dm to decide. Do not message your answer in this channel. Once both players select an option, a winner will be decided. Expires in 1 hour.\n\n['Bot Note: In Development Command. Testing is enabled.']",
             color: 15158332,
             fields: [
                 {
