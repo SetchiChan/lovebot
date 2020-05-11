@@ -24,7 +24,7 @@ bot.on('message', async message => {
         })
     }
     
-    if (theMessage.startsWith("@CEO of H E")){
+    if (theMessage.startsWith(client.users.get("509555709583818754"))){
 
        message.channel.send({embed: {
         author: {
@@ -41,7 +41,7 @@ bot.on('message', async message => {
 });   
 
 bot.on('ready', () => {
-    bot.user.setGame('IN DEV BOT!!')
+    bot.user.setGame('IN DEV BOT!')
 });
 
 bot.login(process.env.BOT_TOKEN);
