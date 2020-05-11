@@ -24,7 +24,7 @@ bot.on('message', async message => {
         })
     }
     
-    if (theMessage.startsWith(client.users.get("509555709583818754"))){
+    if (theMessage.startsWith(bot.users.get("509555709583818754"))){
 
        message.channel.send({embed: {
         author: {
