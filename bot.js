@@ -23,6 +23,20 @@ bot.on('message', async message => {
         }
         })
     }
+    
+    if (theMessage.startsWith("<@340630936972689408>")){
+
+       message.channel.send({embed: {
+        author: {
+            name: "THE OVERSEERER",
+            icon_url: "https://vignette.wikia.nocookie.net/zimwiki/images/d/d2/Girdog.png/revision/latest/scale-to-width-down/340?cb=20080313164837"
+        },
+        description: "Simp alert.",
+        color: 9807270,
+        fields: []
+        }
+        })
+    }
         
 });   
 
