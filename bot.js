@@ -17,7 +17,7 @@ bot.on('message', async message => {
             name: "THE OVERSEERER",
             icon_url: "https://vignette.wikia.nocookie.net/zimwiki/images/d/d2/Girdog.png/revision/latest/scale-to-width-down/340?cb=20080313164837"
         },
-        description: <@408822490022805504>, "YOU HAVE BEEN SUMMONED BY THE OVERSEERER!",
+        description: "<@408822490022805504>, YOU HAVE BEEN SUMMONED BY THE OVERSEERER!",
         color: 9807270,
         fields: []
         }
