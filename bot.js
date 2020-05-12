@@ -24,7 +24,7 @@ bot.on('message', async message => {
         })
     }
     
-    if (theMessage.startsWith(message.guild.members.get("509555709583818754"))){
+    if (theMessage.startsWith("dandle")){
 
        message.channel.send({embed: {
         author: {
