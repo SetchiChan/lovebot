@@ -4,7 +4,7 @@ const bot = new Discord.Client();
 bot.on('message', async message => {
     const personA = message.guild.members.random();
     const personB = message.guild.members.random();
-    const months = ["loli hentai", "milf hentai", "Sex taxi", "hentaihaven", "2 Nrad's, 1 Skies", "Sushi Ball"];
+    const months = ["loli hentai", "milf hentai", "Sex taxi", "hentaihaven", "2 Nrad's, 1 Skies", "Sushi Ball", "some random hentai", "boku no pico"];
     const random = Math.floor(Math.random() * months.length);
     
     theMessage = message.content.toLowerCase();
@@ -12,7 +12,7 @@ bot.on('message', async message => {
     if(message.author.bot) return;
 
  
-    if (theMessage.startsWith("?summon olivia")){
+    if (theMessage.startsWith("?search")){
 
        message.channel.send({embed: {
         author: {
