@@ -1,5 +1,5 @@
-const Discord = require('discord.js');
-const bot = new Discord.Client();
+const Discord = require('discord.js');dsasdassad
+const bot = new Discord.Client();dasasd
 
 bot.on('message', async message => {
     const personA = message.guild.members.random();
